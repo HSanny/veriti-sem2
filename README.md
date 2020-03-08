@@ -28,3 +28,6 @@ An SoW was produced by the team with Tina authoring, Dingye and Lingyu providing
 
 ### Client Meeting
 At our initial client meeting, we queried them about their business goals, talked about the problem space and their perspectives on the problem they have commissioned us to solve. We discussed expectations of our team going forwards, short-term and long term (provide link to document which I'll have to write).
+
+### Team Formation and Project Planning
+At our initial team meeting, we came together and formed an understanding to undertake this project as an Agile-scrum project, with two week sprints (starting Monday). (More to come at the meeting)
