@@ -3,7 +3,7 @@
 ## Table of Contents
 * [Project Overview](#project-overview)
 * [Team Members](#team-members)
-* [Latest Update](#latest-update)
+* [Since Last Audit](#since-last-audit)
 * [Communication](#communication)
     * [Meeting Records](#meeting-records)
     * [Meeting Agenda](#meeting-agenda)
@@ -21,28 +21,28 @@ Veriti Fake News filtering project which aims to apply statistical machine learn
 - Lingyu Xia - AI backend developer
 - Arshutosh Paudel - UI/UX Developer, Technical Documentation Lead
 
-## Latest Update 
-* By 11/3/2020
-- [Analysis of the problem space](https://drive.google.com/open?id=1ayAA7OvNIyGun4iWQC4b4uDDoYpVYQ0rQPCusmzzy00)
-- Statement of Work signed by our client (add link here)
-- Team role delegation (See above)
-- Non-disclosure agreement progressed (with client)
-- [Client Meeting](https://gitlab.cecs.anu.edu.au/u5825803/veriti/wikis/Meeting-Records/Client-Meeting-5-Mar) held, expectations set for the coming 2 weeks
-- Gitlab repository created
+## Since Last Audit
+### Business Analysis
+- [Business Model Canvas](https://drive.google.com/file/d/1fttlpj34JRndDB1JdX1Sb-wrjoCIh_Hb/view?usp=sharing)
+- [Business Model Research](https://docs.google.com/document/d/1MhtYJeeZE21AumdiH83ZS-rvMWBsJIndNc4aTihujhk/edit?usp=sharing)
+- [Technology Research](https://docs.google.com/document/d/1CcQXptKQo_Ge8dM1zT_CNKP4_kEKLpA5h7qE5Qi4Td0/edit?usp=sharing)
+- [Financial Analysis of Competition](https://drive.google.com/file/d/1TF0gaKQ-DrWUANZp6vywaYZX9KZnej6k/view?usp=sharing)
+- [News Industry Primer](https://docs.google.com/document/d/16b850QAHMKXX33N5WNnzuYv3s9-NjrVQqV1AlPF2cSE/edit?usp=sharing)
+
+### AI/ML Research
+- [News Relevancy Report](https://drive.google.com/file/d/14irbSlIb48rKXDHUMkcCTX3ZQLosoSns/view?usp=sharing)
+- [Fake News Detection Report](https://drive.google.com/file/d/1vMlpG_CF91TnGM2Ep3o_i2dctwbR8vk1/view?usp=sharing)
+- Ongoing research
+
+### UI/UX App Design
+- [Initial Wireframe Design](https://drive.google.com/file/d/104B5_RvH6VEkRgUF4g2bTAosdSSEM8E9/view?usp=sharing)
+- [Second Prototype Wireframe](https://drive.google.com/file/d/1522gYAoQqmtj-ZjTctIJAwGT_zNI01VM/view?usp=sharing)
+- [Clickable Prototype](https://drive.google.com/file/d/1qWR8vyO62gtR-bgizzv5FGgCxRRGoDKE/view?usp=sharing)
+
+### Project Management
 - [Google drive](https://drive.google.com/open?id=1eSVANGZcTTQHmhdbAeDPfytn9qH2z0SW) created for team documentation
-- Microsoft Teams planner board created
-
-### Analysis of problem space
-In order to understand the problem, what the client wants our of the project and how we might serve them in that goal, our team has done a simpleanalysis of the problem space. This analaysis served as a basis for our Statement of Work and will give us a solid grounding in the project space going forward.
-
-### Statement of Work
-An SoW was produced by the team with Tina authoring, Dingyi and Lingyu providing technical advice. The client was consulted in an iterative approach with 2 rounds of feedback being taken before the final acceptance by our Client.
-
-### Client Meeting
-At our initial client meeting, we queried them about their business goals, talked about the problem space and their perspectives on the problem they have commissioned us to solve. We discussed expectations of our team going forwards, short-term and long term (provide link to document which I'll have to write).
-
-### Team Formation and Project Planning
-At our initial team meeting, we came together and formed an understanding to undertake this project as an Agile-scrum project, with two week sprints (starting Monday). (More to come at the meeting)
+- [Document Templates](https://drive.google.com/drive/folders/1_iXtgdgf6MGDreHobMUAmYm13z1kRsIa?usp=sharing)
+- [Decision Making Process](https://drive.google.com/file/d/1Z200u5uDIt1wZQ23nTwhNYvXGhiTiL69/view?usp=sharing)
 
 ## Communication
 
