@@ -44,22 +44,5 @@ Veriti Fake News filtering project which aims to apply statistical machine learn
 - [Document Templates](https://drive.google.com/drive/folders/1_iXtgdgf6MGDreHobMUAmYm13z1kRsIa?usp=sharing)
 - [Decision Making Process](https://drive.google.com/file/d/1Z200u5uDIt1wZQ23nTwhNYvXGhiTiL69/view?usp=sharing)
 
-## Communication
-
-### Meeting Records
-* [Tutorial Meeting 4 Mar](https://gitlab.cecs.anu.edu.au/u5825803/veriti/wikis/Meeting-Records/Tutorial-Meeting-4-Mar)
-* [Team Meeting 4 Mar](https://gitlab.cecs.anu.edu.au/u5825803/veriti/wikis/Meeting-Records/Team-Meeting-4-Mar)
-* [Client Meeting 5 Mar](https://gitlab.cecs.anu.edu.au/u5825803/veriti/wikis/Meeting-Records/Client-Meeting-5-Mar)
-* [Team Meeting 9 Mar](https://gitlab.cecs.anu.edu.au/u5825803/veriti/wikis/Meeting-Records/Team-Meeting-9-Mar)
-
-### Meeting Agenda
-* [20190305](https://gitlab.cecs.anu.edu.au/u5825803/veriti/wikis/Meeting-Agenda/20200305)
-* [20190309](https://gitlab.cecs.anu.edu.au/u5825803/veriti/wikis/Meeting-Agenda/20200309)
-
-## Decision Logging
-* [Decisions Logging](https://gitlab.cecs.anu.edu.au/u5825803/veriti/wikis/Decision-Logging/Decision-Logging)
-
-## Reflection
-
 ## Quick Access
-* [Team's Google Drive Link](https://drive.google.com/open?id=1eSVANGZcTTQHmhdbAeDPfytn9qH2z0SW)
+* [Team's Google Drive Link](https://drive.google.com/open?id=1eSVANGZcTTQHmhdbAeDPfytn9qH2z0SW) (Notes: All the documentations are now team's Google Drive, please find meeting minutes and decision loggings on this link.)
