@@ -22,12 +22,9 @@ Veriti Fake News filtering project which aims to apply statistical machine learn
 - Arshutosh Paudel - UI/UX Developer, Technical Documentation Lead
 
 ## Since Last Audit
-### Business Analysis
-- [Business Model Canvas](https://drive.google.com/file/d/1fttlpj34JRndDB1JdX1Sb-wrjoCIh_Hb/view?usp=sharing)
-- [Business Model Research](https://docs.google.com/document/d/1MhtYJeeZE21AumdiH83ZS-rvMWBsJIndNc4aTihujhk/edit?usp=sharing)
-- [Technology Research](https://docs.google.com/document/d/1CcQXptKQo_Ge8dM1zT_CNKP4_kEKLpA5h7qE5Qi4Td0/edit?usp=sharing)
-- [Financial Analysis of Competition](https://drive.google.com/file/d/1TF0gaKQ-DrWUANZp6vywaYZX9KZnej6k/view?usp=sharing)
-- [News Industry Primer](https://docs.google.com/document/d/16b850QAHMKXX33N5WNnzuYv3s9-NjrVQqV1AlPF2cSE/edit?usp=sharing)
+### Business Activities\
+- [Veriti Website Published](https://sites.google.com/view/veriti/home)
+- [Veriti Financial Analysis](https://drive.google.com/open?id=10pULwDdvxxagdRYBxIrdpMJrt4nSsac-)
 
 ### AI/ML Research
 - [News Relevancy Report](https://drive.google.com/file/d/14irbSlIb48rKXDHUMkcCTX3ZQLosoSns/view?usp=sharing)
@@ -35,9 +32,11 @@ Veriti Fake News filtering project which aims to apply statistical machine learn
 - Ongoing research
 
 ### UI/UX App Design
-- [Initial Wireframe Design](https://drive.google.com/file/d/104B5_RvH6VEkRgUF4g2bTAosdSSEM8E9/view?usp=sharing)
-- [Second Prototype Wireframe](https://drive.google.com/file/d/1522gYAoQqmtj-ZjTctIJAwGT_zNI01VM/view?usp=sharing)
-- [Clickable Prototype](https://drive.google.com/file/d/1qWR8vyO62gtR-bgizzv5FGgCxRRGoDKE/view?usp=sharing)
+- [Clickable Prototype A](https://drive.google.com/drive/folders/1uN9bj9SUK0WZETVBVyeiHO0pcYkPkCRv?usp=sharing)
+- [Clickable Prototype B](https://drive.google.com/open?id=1vmosWOd1Jklvwmxt7c2RRozh11EU5NPt)
+- [User Personas](https://drive.google.com/open?id=15rkc_wZLuLODEMFwXyEsqgt7nQaXHyQr)
+- [User Research](https://drive.google.com/open?id=16OWaD6z2Ey0tN7tCRyCs0ngY6UCu-kK_)
+- [User Testing Ongoing](https://drive.google.com/open?id=1_P4-fZvsmR50M7hkzyGPxDLuvFEH8-45)
 
 ### Project Management
 - [Google drive](https://drive.google.com/open?id=1eSVANGZcTTQHmhdbAeDPfytn9qH2z0SW) created for team documentation
