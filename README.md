@@ -29,6 +29,7 @@ Veriti Fake News filtering project which aims to apply statistical machine learn
 ### AI/ML Research
 - [News Relevancy Report](https://drive.google.com/file/d/14irbSlIb48rKXDHUMkcCTX3ZQLosoSns/view?usp=sharing)
 - [Fake News Detection Report](https://drive.google.com/file/d/1vMlpG_CF91TnGM2Ep3o_i2dctwbR8vk1/view?usp=sharing)
+- [Testing Reports](https://drive.google.com/open?id=1y-GUokfRy2w1HMskpRj_31QJehMWM82K)
 - Ongoing research
 
 ### UI/UX App Design
@@ -42,6 +43,7 @@ Veriti Fake News filtering project which aims to apply statistical machine learn
 - [Google drive](https://drive.google.com/open?id=1eSVANGZcTTQHmhdbAeDPfytn9qH2z0SW) created for team documentation
 - [Document Templates](https://drive.google.com/drive/folders/1_iXtgdgf6MGDreHobMUAmYm13z1kRsIa?usp=sharing)
 - [Decision Making Process](https://drive.google.com/file/d/1Z200u5uDIt1wZQ23nTwhNYvXGhiTiL69/view?usp=sharing)
+- [Meeting Minutes](https://drive.google.com/open?id=1Z37U6ZIGwwG-HzEAaSN22_vTykuAnBok)
 
 ## Quick Access
 * [Team's Google Drive Link](https://drive.google.com/open?id=1eSVANGZcTTQHmhdbAeDPfytn9qH2z0SW) (Notes: All the documentations are now team's Google Drive, please find meeting minutes and decision loggings on this link.)
