@@ -40,7 +40,6 @@ We also created a website for our Veriti Project which contains overview and mem
 - [Showcase Items](https://drive.google.com/drive/folders/1y-COYHbI5b3nlmd9jpz3nU4vO3luHqDe?usp=sharing)
 
 ## Documentation(Semester 2)
-- [Communication Document](https://docs.google.com/document/d/1Y_dyhCAuoTM0jxEbyiXzjQaNaDeoiTfVqYjiQvUADnQ/edit?usp=sharing)
 - [Meeting Minutes](https://drive.google.com/drive/folders/1upavabqlHOQ221rhMnEXg1b_aurWXwzM?usp=sharing)
 - [Project Audit 1](https://drive.google.com/drive/folders/1zZ4Hds7zg0q5kHrIPcZpsEBuVZEf1eKw?usp=sharing)
 - [Project Audit 2](https://drive.google.com/drive/folders/12LV9tDTD6UX11c0YeKouG8se9HztCDTR?usp=sharing)
@@ -51,9 +50,7 @@ We also created a website for our Veriti Project which contains overview and mem
 ## Rroject Management and Communication
 - [Google Drive for documentation Storage](https://drive.google.com/drive/folders/1eSVANGZcTTQHmhdbAeDPfytn9qH2z0SW?usp=sharing)
 - [Microsoft Planner for task log](https://tasks.office.com/ANU365.onmicrosoft.com/en-US/Home/Planner/#/plantaskboard?groupId=b281e11d-1009-476d-8907-ebd2be2edb48&planId=kZ83flB2k06jqDMWq27Jn8gAFks5)
+- [Communication Document](https://docs.google.com/document/d/1Y_dyhCAuoTM0jxEbyiXzjQaNaDeoiTfVqYjiQvUADnQ/edit?usp=sharing)
+- [Work Log](https://docs.google.com/spreadsheets/d/1nb6p_P_V1yTU3rJQp2C5U_ZMiiq-XA8H-r1yHunGqgI/edit?usp=sharing)
 
-## Meeting Schedule
-- Tutorial Meeting : Friday 16:00 - 18:00
-- Clients Meeting : Tuesday 12:00 - 13:00 (Once a week)
-- Team Meeting : Tuesday 13:00 - 14:00
 
