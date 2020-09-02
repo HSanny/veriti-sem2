@@ -40,7 +40,7 @@ We also created a website for our Veriti Project which contains overview and mem
 - [Showcase Items](https://drive.google.com/drive/folders/1y-COYHbI5b3nlmd9jpz3nU4vO3luHqDe?usp=sharing)
 
 ## Documentation(Semester 2)
-- [Communication Document0](https://docs.google.com/document/d/1Y_dyhCAuoTM0jxEbyiXzjQaNaDeoiTfVqYjiQvUADnQ/edit?usp=sharing)
+- [Communication Document](https://docs.google.com/document/d/1Y_dyhCAuoTM0jxEbyiXzjQaNaDeoiTfVqYjiQvUADnQ/edit?usp=sharing)
 - [Meeting Minutes](https://drive.google.com/drive/folders/1upavabqlHOQ221rhMnEXg1b_aurWXwzM?usp=sharing)
 - [Project Audit 1](https://drive.google.com/drive/folders/1zZ4Hds7zg0q5kHrIPcZpsEBuVZEf1eKw?usp=sharing)
 - [Project Audit 2](https://drive.google.com/drive/folders/12LV9tDTD6UX11c0YeKouG8se9HztCDTR?usp=sharing)
