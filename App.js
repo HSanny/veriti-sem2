@@ -8,6 +8,7 @@
 
 import React from 'react';
 import {render} from "react-dom";
+import Newscategories from './components/Newscategories'
 import {
   SafeAreaView,
   StyleSheet,
@@ -20,7 +21,8 @@ import {
   TouchableNativeFeedback,
   TouchableOpacity,
   TextView,
-  Image
+  Image,
+  Dimensions
 } from 'react-native';
 
 import {
@@ -72,9 +74,70 @@ const App = () => {
         <Stack.Screen name = "Login" component={Login} options={{ headerShown: false }
   }/>
         <Stack.Screen name ="SignIn" component = {SignIn}  options={{ headerShown: false }} />
+        <Stack.Screen name = "homescreen" component = {homescreen} options={{headerShown: false}} />
       </Stack.Navigator>
     </NavigationContainer>
   )
+}
+const homescreen = () =>{
+  let dimensions = Dimensions.get("window");
+  let screenwidth = dimensions.width + 200
+  let newsbox = 250
+return(
+  <ScrollView style={{backgroundColor: "#F6EEF0"}}>
+    <View>
+      <Text style={{fontWeight :'bold', fontSize: 22, padding: 30}}>
+        Happening in Australia
+      </Text>
+      <View style = {{height: newsbox, marginLeft: 10}}>
+        <ScrollView horizontal = {true} style = {{paddingHorizontal:20}} showsHorizontalScrollIndicator={false}>
+          <Newscategories imagesource={{ uri: 'https://imageresizer.static9.net.au/iL1wz7t6ymcD86bayzOWbLTiFp8=/800x0/https%3A%2F%2Fprod.static9.net.au%2Ffs%2F39a838f6-f17d-4633-aada-fdf48d80a091'}} 
+        newsdescription= "The true size of the ancient shark megalodon revealed" />
+        <Newscategories imagesource={{ uri: 'https://imageresizer.static9.net.au/iL1wz7t6ymcD86bayzOWbLTiFp8=/800x0/https%3A%2F%2Fprod.static9.net.au%2Ffs%2F39a838f6-f17d-4633-aada-fdf48d80a091'}} 
+        newsdescription= "The true size of the ancient shark megalodon revealed" />
+        <Newscategories imagesource={{ uri: 'https://imageresizer.static9.net.au/iL1wz7t6ymcD86bayzOWbLTiFp8=/800x0/https%3A%2F%2Fprod.static9.net.au%2Ffs%2F39a838f6-f17d-4633-aada-fdf48d80a091'}} 
+        newsdescription= "The true size of the ancient shark megalodon revealed" />
+        <Newscategories imagesource={{ uri: 'https://imageresizer.static9.net.au/iL1wz7t6ymcD86bayzOWbLTiFp8=/800x0/https%3A%2F%2Fprod.static9.net.au%2Ffs%2F39a838f6-f17d-4633-aada-fdf48d80a091'}} 
+        newsdescription= "The true size of the ancient shark megalodon revealed" />
+        </ScrollView>
+      </View>
+    </View>
+    <View>
+      <Text style={{fontWeight :'bold', fontSize: 22, padding: 30}}>
+        Happening Globally
+      </Text>
+      <View style = {{height: newsbox, marginLeft: 10}}>
+        <ScrollView horizontal = {true} style = {{paddingHorizontal:20}} showsHorizontalScrollIndicator={false}>
+          <Newscategories imagesource={{ uri: 'https://imageresizer.static9.net.au/iL1wz7t6ymcD86bayzOWbLTiFp8=/800x0/https%3A%2F%2Fprod.static9.net.au%2Ffs%2F39a838f6-f17d-4633-aada-fdf48d80a091'}} 
+        newsdescription= "The true size of the ancient shark megalodon revealed" />
+        <Newscategories imagesource={{ uri: 'https://imageresizer.static9.net.au/iL1wz7t6ymcD86bayzOWbLTiFp8=/800x0/https%3A%2F%2Fprod.static9.net.au%2Ffs%2F39a838f6-f17d-4633-aada-fdf48d80a091'}} 
+        newsdescription= "The true size of the ancient shark megalodon revealed" />
+        <Newscategories imagesource={{ uri: 'https://imageresizer.static9.net.au/iL1wz7t6ymcD86bayzOWbLTiFp8=/800x0/https%3A%2F%2Fprod.static9.net.au%2Ffs%2F39a838f6-f17d-4633-aada-fdf48d80a091'}} 
+        newsdescription= "The true size of the ancient shark megalodon revealed" />
+        <Newscategories imagesource={{ uri: 'https://imageresizer.static9.net.au/iL1wz7t6ymcD86bayzOWbLTiFp8=/800x0/https%3A%2F%2Fprod.static9.net.au%2Ffs%2F39a838f6-f17d-4633-aada-fdf48d80a091'}} 
+        newsdescription= "The true size of the ancient shark megalodon revealed" />
+        </ScrollView>
+      </View>
+    </View>
+    <View>
+      <Text style={{fontWeight :'bold', fontSize: 22, padding: 30}}>
+        For You
+      </Text>
+      <View style = {{height: newsbox, marginLeft: 10}}>
+        <ScrollView horizontal = {true} style = {{paddingHorizontal:20}} showsHorizontalScrollIndicator={false}>
+          <Newscategories imagesource={{ uri: 'https://imageresizer.static9.net.au/iL1wz7t6ymcD86bayzOWbLTiFp8=/800x0/https%3A%2F%2Fprod.static9.net.au%2Ffs%2F39a838f6-f17d-4633-aada-fdf48d80a091'}} 
+        newsdescription= "The true size of the ancient shark megalodon revealed" />
+        <Newscategories imagesource={{ uri: 'https://imageresizer.static9.net.au/iL1wz7t6ymcD86bayzOWbLTiFp8=/800x0/https%3A%2F%2Fprod.static9.net.au%2Ffs%2F39a838f6-f17d-4633-aada-fdf48d80a091'}} 
+        newsdescription= "The true size of the ancient shark megalodon revealed" />
+        <Newscategories imagesource={{ uri: 'https://imageresizer.static9.net.au/iL1wz7t6ymcD86bayzOWbLTiFp8=/800x0/https%3A%2F%2Fprod.static9.net.au%2Ffs%2F39a838f6-f17d-4633-aada-fdf48d80a091'}} 
+        newsdescription= "The true size of the ancient shark megalodon revealed" />
+        <Newscategories imagesource={{ uri: 'https://imageresizer.static9.net.au/iL1wz7t6ymcD86bayzOWbLTiFp8=/800x0/https%3A%2F%2Fprod.static9.net.au%2Ffs%2F39a838f6-f17d-4633-aada-fdf48d80a091'}} 
+        newsdescription= "The true size of the ancient shark megalodon revealed" />
+        </ScrollView>
+      </View>
+    </View>
+</ScrollView>
+)
 }
 const users = []
 const Login = ({navigation}) => {
@@ -104,7 +167,7 @@ const Login = ({navigation}) => {
       
       <View style = {{alignItems: 'center',flexDirection:'row', paddingBottom:10}}>
         <View style = {{paddingRight:30,}}>  
-          <TouchableOpacity style = {styles.intButton}>
+          <TouchableOpacity style = {styles.intButton} onPress={() => navigation.navigate('homescreen')}>
             <Text style = {styles.buttonText}> Login </Text>
           </TouchableOpacity>
         </View>   
@@ -210,7 +273,7 @@ const styles = StyleSheet.create({
   container: {flex:1,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor:'#87CEFA'
+    backgroundColor:'#DFDACD'
 },
   input: { height: 40, backgroundColor: "white",
     borderColor: 'white', 
