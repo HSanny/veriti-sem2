@@ -273,7 +273,7 @@ const styles = StyleSheet.create({
   container: {flex:1,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor:'#DFDACD'
+    backgroundColor:'#EAE4D8'
 },
   input: { height: 40, backgroundColor: "white",
     borderColor: 'white', 
