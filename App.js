@@ -9,6 +9,9 @@
 import React from 'react';
 import {render} from "react-dom";
 import Newscategories from './components/Newscategories'
+import Webviewer from './components/Webviewer'
+import { WebView } from 'react-native-webview';
+
 import {
   SafeAreaView,
   StyleSheet,
@@ -71,14 +74,22 @@ const App = () => {
   return (
     <NavigationContainer>
       <Stack.Navigator>
-        <Stack.Screen name = "Login" component={Login} options={{ headerShown: false }
-  }/>
+        <Stack.Screen name = "Login" component={Login} options={{ headerShown: false }}/>
         <Stack.Screen name ="SignIn" component = {SignIn}  options={{ headerShown: false }} />
         <Stack.Screen name = "homescreen" component = {homescreen} options={{headerShown: false}} />
       </Stack.Navigator>
     </NavigationContainer>
   )
 }
+
+const website = () =>{
+return(
+  <Webviewer></Webviewer>
+)
+}
+
+
+
 const homescreen = () =>{
   let newsbox = 200
 return(
@@ -321,4 +332,4 @@ const styles = StyleSheet.create({
     color:"white",
     fontSize:18}   
 } )
-export default App;
+export default website;
