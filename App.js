@@ -10,7 +10,6 @@ import React from 'react';
 import {render} from "react-dom";
 import Newscategories from './components/Newscategories'
 import Webviewer from './components/Webviewer'
-import { WebView } from 'react-native-webview';
 
 import {
   SafeAreaView,
@@ -332,4 +331,4 @@ const styles = StyleSheet.create({
     color:"white",
     fontSize:18}   
 } )
-export default website;
+export default App;
