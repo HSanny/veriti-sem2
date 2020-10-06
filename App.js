@@ -25,6 +25,9 @@ import {
   Dimensions
 } from 'react-native';
 
+
+import createBottomTabNavigator from './screens/Home.js'
+
 import {
   Header,
   LearnMoreLinks,
@@ -34,6 +37,7 @@ import {
 } from 'react-native/Libraries/NewAppScreen';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
+import { tan } from 'react-native-reanimated';
 
 const Stack = createStackNavigator();
 
@@ -71,17 +75,21 @@ const App = () => {
   return (
     <NavigationContainer>
       <Stack.Navigator>
-        <Stack.Screen name = "Login" component={Login} options={{ headerShown: false }
-  }/>
+        <Stack.Screen name = "Login" component={Login} options={{ headerShown: false } }/>
         <Stack.Screen name ="SignIn" component = {SignIn}  options={{ headerShown: false }} />
-        <Stack.Screen name = "homescreen" component = {homescreen} options={{headerShown: false}} />
+        <Stack.Screen name = "HomePage" component = {homescreen} options = {{headerShown : false}}/>
       </Stack.Navigator>
     </NavigationContainer>
   )
 }
+
+
+
 const homescreen = () =>{
   let newsbox = 200
 return(
+  
+    
   <ScrollView style={{backgroundColor: "#ff6622"}}>
     <View>
       <Text style={{fontWeight :'bold', fontSize: 22, padding: 30}}>
@@ -165,7 +173,7 @@ const Login = ({navigation}) => {
       
       <View style = {{alignItems: 'center',flexDirection:'row', paddingBottom:10}}>
         <View style = {{paddingRight:30,}}>  
-          <TouchableOpacity style = {styles.intButton} onPress={() => navigation.navigate('homescreen')}>
+          <TouchableOpacity style = {styles.intButton} onPress={() => navigation.navigate("HomePage")}>
             <Text style = {styles.buttonText}> Login </Text>
           </TouchableOpacity>
         </View>   
@@ -322,3 +330,5 @@ const styles = StyleSheet.create({
     fontSize:18}   
 } )
 export default App;
+
+
