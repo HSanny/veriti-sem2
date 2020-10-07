@@ -7,28 +7,12 @@
  */
 
 import React from 'react';
-import {
-  SafeAreaView,
-  StyleSheet,
-  ScrollView,
-  View,
-  Text,
-  StatusBar,
-} from 'react-native';
-
-import {
-  Header,
-  LearnMoreLinks,
-  Colors,
-  DebugInstructions,
-  ReloadInstructions,
-} from 'react-native/Libraries/NewAppScreen';
-
+import { StyleSheet, Text, View} from 'react-native';
 
 export default class App extends React.Component{
   render(){
     return(
-      <View style = {style.container}>
+      <View style = {styles.container}>
         <Text>Opene up App.js to start working on your app!</Text>
       </View>
     );
@@ -40,6 +24,6 @@ const styles = StyleSheet.create({
     flex:1,
     backgroundColor:'#fff',
     alignItems:'center',
-    justifyContent:'center'
-  }
-})
+    justifyContent:'center',
+  },
+});
