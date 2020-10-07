@@ -8,12 +8,16 @@
 
 import React from 'react';
 import { StyleSheet, Text, View} from 'react-native';
+import LoginPage from './screens/LoginPage'
+import RegisterPage from './screens/RegisterPage'
+
+
 
 export default class App extends React.Component{
   render(){
     return(
       <View style = {styles.container}>
-        <Text>Opene up App.js to start working on your app!</Text>
+        <Text>Opened up App.js to start working on your app!</Text>
       </View>
     );
   }
