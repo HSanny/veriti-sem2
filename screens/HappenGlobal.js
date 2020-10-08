@@ -2,12 +2,12 @@ import React, {Component} from 'react';
 import {Text, TextInput, Button, View, TouchableOpacity} from 'react-native'
 import {createStackNavigator} from '@react-navigation/stack'
 
-export default class Global extends Component{
+export default class HappenGlobal extends Component{
     render(){
         return(
             <View style = {styles.container}>
                 <Text style = {styles.text}>
-                    Welcome to the Global Page
+                    Welcome to the InAus
                 </Text>
             </View>
         );

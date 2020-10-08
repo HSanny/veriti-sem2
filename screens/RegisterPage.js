@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import {Text, TextInput, View, TouchableOpacity,Image,StyleSheet} from 'react-native'
 import {createStackNavigator, createAppContainer} from '@react-navigation/stack'
 
-const users = []
+
 class User {
     constructor(userName,password,firstName,lastName,email) {
       this.userName = userName

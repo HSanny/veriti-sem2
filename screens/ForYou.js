@@ -1,30 +1,79 @@
-import React, {Component} from 'react';
-import {Text, TextInput, Button, View, TouchableOpacity} from 'react-native'
-import {createStackNavigator} from '@react-navigation/stack'
+import * as React from 'react';
+import {
+  TouchableOpacity,
+  StyleSheet,
+  View,
+  Text,
+  SafeAreaView
+} from 'react-native';
 
-export default class ForYou extends Component{
-    render(){
-        return(
-            <View style = {styles.container}>
-                <Text style = {styles.text}>
-                    Welcome to the HomePage
-                </Text>
-            </View>
-        );
-    }
+const ForYou = ({ route, navigation }) => {
+  return (
+    <SafeAreaView style={{ flex: 1 }}>
+      <View style={{ flex: 1, padding: 16 }}>
+        <View
+          style={{
+            flex: 1,
+            alignItems: 'center',
+            justifyContent: 'center',
+          }}>
+          <Text
+            style={{
+              fontSize: 25,
+              textAlign: 'center',
+              marginBottom: 16
+            }}>
+            You are on For You Screen
+          </Text>
+          <TouchableOpacity
+            style={styles.button}
+            onPress={
+              () => navigation.navigate('Home')
+            }>
+            <Text>Go to Interested Playlist</Text>
+          </TouchableOpacity>
+          <TouchableOpacity
+            style={styles.button}
+            onPress={
+              () => navigation.navigate('Details')
+            }>
+            <Text>Go to Saved Playlist</Text>
+          </TouchableOpacity>
+          <TouchableOpacity
+            style={styles.button}
+            onPress={
+              () => navigation.navigate('Profile')
+            }>
+            <Text>Go to Profile Setting</Text>
+          </TouchableOpacity>
+        </View>
+        <Text
+          style={{
+            fontSize: 18,
+            textAlign: 'center',
+            color: 'grey'
+          }}>
+          React Native Bottom Navigation
+        </Text>
+        <Text
+          style={{
+            fontSize: 16,
+            textAlign: 'center',
+            color: 'grey'
+          }}>
+          www.aboutreact.com
+        </Text>
+      </View>
+    </SafeAreaView>
+  );
 }
-
-const styles = {
-    container :{
-        padding:20,
-        flex:1,
-        backgroundColor : 'ecf0f1',
-        justifyContent : 'center',
-        alighItems : 'stretch'
-    },
-    text:{
-        textAlign: 'center',
-        color: 'black',
-        fontSize: 20
-    }
-}
+const styles = StyleSheet.create({
+  button: {
+    alignItems: 'center',
+    backgroundColor: '#DDDDDD',
+    padding: 10,
+    width: 300,
+    marginTop: 16,
+  },
+});
+export default ForYou;

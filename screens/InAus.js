@@ -7,7 +7,7 @@ export default class InAus extends Component{
         return(
             <View style = {styles.container}>
                 <Text style = {styles.text}>
-                    Welcome to the InAus Page
+                    Welcome to the InAus
                 </Text>
             </View>
         );
