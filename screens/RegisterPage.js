@@ -1,80 +1,165 @@
 import React, {Component} from 'react';
-import {Text, TextInput, Button, View, TouchableOpacity} from 'react-native'
-import {createStackNavigator} from '@react-navigation/stack'
+import {Text, TextInput, View, TouchableOpacity,Image,StyleSheet} from 'react-native'
+import {createStackNavigator, createAppContainer} from '@react-navigation/stack'
 
-
-export default class RegisterPage extends Component {
-    render(){
-        return(
-            <View style = {styles.container}>
-                <View style = {styles.registerform}>
-                    <TextInput style = {styles.input}
-                        placeholder = "Enter your name "
-                        returnKeyType = "next"
-                        onSubmitEditing = {() => this.emailinput.focus()}
-                    />
-                
-                
-                    <TextInput style = {styles.input}
-                        placeholder = "Enter your email"
-                        returnKeyType = "next"
-                        onSubmitEditing = {() => this.passwordInput.focus()}
-                        keyboardType = "email-address"
-                        autoCapitalize = "none"
-                        autoCorrect = {false}
-                        ref = {(input) => this.emailInput = input}
-                    />
-
-                    <TextInput style = {styles.input}
-                        placeholder = "Enter password"
-                        returnKeyType = "go"
-                        secureTextEntry
-                        ref = {(input) => this.passwordInput = input}
-                    />
-                    <TouchableOpacity style = {styles.buttoncontainer} onPress = {() => this.props.navigation.navigate('Login')}>
-                        <Text style = {styles.buttontext}>
-                            Sign up
-                        </Text>
-                    </TouchableOpacity>
-                </View>
-            </View>
-        )
+const users = []
+class User {
+    constructor(userName,password,firstName,lastName,email) {
+      this.userName = userName
+      this.password = password
+      this.firstName = firstName
+      this.lastName = lastName
+      this.email = email 
     }
+    get user() {
+      return this.userName
+    }
+    set user(name) {
+      this.userName = name
+    }
+    get pw() {
+      return this.pw
+    }
+    set pw(pass) {
+      this.password = pass 
+    }
+    get fullName() {
+      return this.firstName + " " +  this.lastName
+    }
+    get mail() {
+      return this.email
+    }
+    set mail(email) {
+      this.email = email
+    }
+  }
+  
+export const RegisterPage = ({navigation}) => {
+    
+        const [userName, onChangeText_username] = React.useState('');
+        const [password, onChangeText_password] = React.useState('');
+        const [confirm_password, onChangeText_confirm_password] = React.useState('');
+        const [fname, onChangeText_fname] = React.useState('');
+        const [lname, onChangeText_lname] = React.useState('');
+        const [email, onChangeText_email] = React.useState('');
+        const [confirm_email, onChangeText_confirm_email] = React.useState('');
+
+        return(
+            <View style={styles.container}>
+      <Image style={{aspectRatio: 0.75, resizeMode: 'contain', position:"relative",}} source={require('../resources/iconhalf.png')}/>
+      <View style = {{alignItems: 'center',flexDirection:'row'}}>
+      <View style = {{padding:10}}> 
+        <TextInput textAlign = {"center"}
+        placeholder="First Name"
+        style={styles.inputSmall}
+        onChangeText={text => {onChangeText_fname(text)}}
+        value={fname}
+        />
+      </View>
+      <View style = {{padding:10}}> 
+        <TextInput textAlign = {"center"}
+        placeholder = "Last Name"
+        style={styles.inputSmall}
+        onChangeText={text => {onChangeText_lname(text)}}
+        value={lname}
+        />
+      </View>
+      </View>
+      <View style = {{padding:10}}>
+        <TextInput textAlign = {"center"}
+        placeholder="User Name" 
+        style={styles.input}
+        onChangeText={text => {onChangeText_username(text)}}
+        value={userName}
+        />
+      </View>
+      <View style = {{padding:10}}> 
+        <TextInput textAlign = {"center"}
+        secureTextEntry = {true}
+        placeholder="Password" 
+        style={styles.input}
+        onChangeText={text => {onChangeText_password(text)}}
+        value={password}
+        />
+      </View>
+      <View style = {{padding:10}}> 
+        <TextInput textAlign = {"center"}
+        secureTextEntry = {true}
+        placeholder="Confirm Password" 
+        style={styles.input}
+        onChangeText={text => {onChangeText_confirm_password(text)}}
+        value={confirm_password}
+        />
+      </View>
+      <View style = {{padding:10}}> 
+        <TextInput textAlign = {"center"}
+        placeholder="E-mail"
+        style={styles.input}
+        onChangeText={text => {onChangeText_email(text)}}
+        value={email}
+        />
+      </View>
+      <View style = {{padding:10}}> 
+        <TextInput textAlign = {"center"}
+        placeholder="Confirm E-mail"
+        style={styles.input}
+        onChangeText={text => {onChangeText_confirm_email(text)}}
+        value={confirm_email}
+        />
+      </View>
+      <TouchableOpacity style = {styles.buttoncontainer} onPress={() => { 
+        const user1 = new User(userName,password,fname,lname,email)
+        users.push(user1)
+        navigation.navigate('Login')}}>
+          <Text style = {styles.buttonText}> Create Account </Text>
+      </TouchableOpacity>
+    </View>) 
 }
 
 
-const styles = {
+
+const styles = StyleSheet.create({
     container:{
-        padding: 10,
         flex : 1,
-        backgroundColor : 'ecf0f1',
-    },
-    registerform:{
-        marginTop: 50,
+        backgroundColor : '#DFDACD',
         justifyContent: 'center',
-        alignItems: 'stretch'
+        alignItems : 'center'
     },
     input:{
-        paddingLeft: 20,
-        borderRadius: 50,
-        height: 50,
-        fontSize : 25,
-        backgroundColor: 'white',
-        borderColor:'#1abc9c',
-        borderWidth: 1,
-        marginBotton: 20,
-        color: "#34495e"
+        height: 40, 
+        backgroundColor:"white",
+        borderColor: 'white', 
+        borderWidth: 2,
+        borderRadius: 20,
+        textAlign:"center",
+        width: 300,
+        fontSize:18,
     },
+
+    inputSmall: { height: 40, 
+        borderColor: 'white',
+        backgroundColor:"white", 
+        borderWidth: 2,
+        borderRadius: 20,
+        textAlign:"center",
+        width: 140,
+        fontSize:18,
+      },
+    
+    
     buttoncontainer:{
-        height: 50,
-        borderRadius:50,
-        backgroundColor:'1abc9c',
-        paddingVertical:10,
-        justifyContent:'center',
+        borderColor:"#35246A", 
+        borderWidth: 2,
+        borderRadius: 15,
+        width:200,
+        height:50, 
+        alignItems:'center',
+        padding:10,
+        backgroundColor:'#35246A'
     },
     buttontext:{
-        textAlign:'center',
-        color:'#ecf0f1',
-        fontSize:20
+        textAlign:"center",
+        color:"white",
+        fontSize:18
     }
-}
+})

@@ -1,6 +1,10 @@
 import React, {Component} from 'react';
-import {Text, TextInput, Button, View, TouchableOpacity} from 'react-native'
-import {createStackNavigator} from '@react-navigation/stack'
+import {Text, TextInput, View, TouchableOpacity,Image,StyleSheet} from 'react-native'
+import {createStackNavigator, createAppContainer} from '@react-navigation/stack'
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import InAus from '../screens/InAus'
+import Global from '../screens/Global'
+import ForYou from '../screens/ForYou'
 
 export default class HomePage extends Component{
     render(){
@@ -14,17 +18,50 @@ export default class HomePage extends Component{
     }
 }
 
-const styles = {
-    container :{
-        padding:20,
-        flex:1,
-        backgroundColor : 'ecf0f1',
-        justifyContent : 'center',
-        alighItems : 'stretch'
+const BottomTabs = createBottomTabNavigator({
+    InAus:{
+        screen:InAus,
+        navigationOptions:({navigation}) => ({
+            tabBarIcon : ({focused, tintColor}) => {
+                return <Icon name ="dot-circle-o" size = {20} color = {tintColor}/>
+            }
+        })
     },
-    text:{
-        textAlign: 'center',
-        color: 'black',
-        fontSize: 20
+    Global:{
+        screen:Global,
+        navigationOptions:({navigation}) => ({
+            tabBarIcon : ({focused, tintColor}) => {
+                return <Icon name = "file-text" size = {20} color = {tintColor}/>
+            }
+        })
+    },
+    ForYou:{
+        screen:ForYou,
+        navigationOptions:({navigation}) => ({
+            tabBarIcon : ({focused, tintColor}) => {
+                return <Icon name = "file-text" size = {20} color = {tintColor}/>
+            }
+        })
+    },
+},{
+    tabBarOptions:{
+        activeTintColor : '#ff4757',
+        inactiveTintColor : 'black',
+        activeBackgroundColor : '#114e52',
+        labelStyle:{
+            fontSize : 13,
+        },
+        style:{
+            backgroundColor : '#86dfe5'
+        },
     }
-}
+})
+
+
+  
+ export const switched = createAppContainer(
+      createSwitchNavigator({
+          InAus : InAus,
+          AppStack : BottomTabs
+      })
+  )
