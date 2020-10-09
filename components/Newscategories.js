@@ -8,13 +8,13 @@ import {
 
 class Newscategories extends Component {
     render() {
-        let newsbox = 200
+        let newsbox = 150
 
         return (
-            <View style = {{flex:1,height: newsbox, width: newsbox, borderColor: '#999999', borderWidth:2, borderRadius: 10, alignItems:"center", justifyContent:"center"}}>
-            <View style = {{flex:2}}>
+            <View style = {{flex:1,height: newsbox+50, width: newsbox, borderColor: '#999999', borderWidth:1, borderRadius: 10, alignItems:"center", justifyContent:"center", backgroundColor: "#ff66"}}>
+            <View style = {{margin:5,flex:2}}>
               <Image
-              style={{height: newsbox-10, width: newsbox-10, flex:1, borderRadius:30}}
+              style={{height: newsbox-10, width: newsbox-10, flex:1, borderRadius:10}}
               source={this.props.imagesource}
             />
             </View>
@@ -30,3 +30,10 @@ class Newscategories extends Component {
 }
 export default Newscategories;
 
+const styles = StyleSheet.create({
+    container: {
+        flex: 1,
+        alignItems: 'center',
+        justifyContent: 'center'
+    }
+});
