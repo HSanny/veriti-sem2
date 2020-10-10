@@ -8,15 +8,18 @@ import {
     Image
 } from "react-native";
 
-const CategoryHeader = ({navigation}) =>{
+
+const secondarycolor = "#4C26B2"
+const CategoryHeader = (props) =>{    
 
     return(
-    <View style={{flexDirection:"row"}}>
+    <View style={{flexDirection:"row", justifyContent: "space-between"}}>
       <Text style={{fontWeight :'bold', fontSize: 22, padding: 20}}>
-        Happening in Australia
+        {props.categorytopic}
+        
       </Text>
-      <View style = {{width:150, paddingTop:20, paddingLeft:40}}>
-        <Button title="View More" onPress={() => navigation.navigate('SignIn')}/>
+      <View style = {{ width:150, padding:20}}>
+        <Button color = {secondarycolor}  title="View More" onPress={null}/>
       </View>
       </View>
       );

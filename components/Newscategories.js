@@ -6,20 +6,22 @@ import {
     Image
 } from "react-native";
 
+const primarycolor = "#ffffff"
+const secondarycolor = "#4C26B2"
 class Newscategories extends Component {
     render() {
         let newsbox = 150
 
         return (
-            <View style = {{flex:1,height: newsbox+50, width: newsbox, borderColor: '#999999', borderWidth:1, borderRadius: 10, alignItems:"center", justifyContent:"center", backgroundColor: "#ff66"}}>
-            <View style = {{margin:5,flex:2}}>
+            <View style = {{flex:1, marginRight:10, height: newsbox+50, width: newsbox, borderColor:secondarycolor, borderWidth:2, borderRadius: 10, alignItems:"center", justifyContent:"center", backgroundColor: "#d8d0ee" }}>
+            <View style = {{margin:5,flex:3}}>
               <Image
-              style={{height: newsbox-10, width: newsbox-10, flex:1, borderRadius:10}}
+              style={{height: newsbox-50, width: newsbox-10, flex:1, borderRadius:10}}
               source={this.props.imagesource}
             />
             </View>
-            <View style = {{flex:1}}>
-              <Text style= {{flex:1,paddingHorizontal:10}}>
+            <View style = {{borderTopRightRadius:10, flex:2, backgroundColor: "#251551"}}>
+              <Text style= {{color:primarycolor, flex:1,paddingHorizontal:5}}>
               {this.props.newsdescription}
               </Text>
             </View>

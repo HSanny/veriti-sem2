@@ -40,6 +40,8 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 
 const Stack = createStackNavigator();
+const primarycolor = "#ffffff"
+const secondarycolor = "#4C26B2"
 
 class User {
   constructor(userName,password,firstName,lastName,email) {
@@ -96,10 +98,10 @@ const homescreen = ({navigation}) =>{
 return(
 
 
-  <ScrollView style={{backgroundColor: "#ff6622"}}>
+  <ScrollView style={{backgroundColor: primarycolor}}>
     <View>
     <Image style={{aspectRatio: 0.80, resizeMode: 'contain', position:"relative", marginLeft:15}} source={require('./iconhalf.png')}/>
-    <CategoryHeader></CategoryHeader>
+    <CategoryHeader categorytopic = "Happening in Australia"></CategoryHeader>
       <View style = {{height: newsboxheight, flex:1}}>
         <ScrollView   horizontal = {true} contentContainerStyle={{ paddingLeft:20, flexGrow: 1}}  showsHorizontalScrollIndicator={false}>
           <Newscategories  imagesource={{ uri: 'https://imageresizer.static9.net.au/iL1wz7t6ymcD86bayzOWbLTiFp8=/800x0/https%3A%2F%2Fprod.static9.net.au%2Ffs%2F39a838f6-f17d-4633-aada-fdf48d80a091'}} 
@@ -114,9 +116,7 @@ return(
       </View>
     </View>
     <View>
-      <Text style={{fontWeight :'bold', fontSize: 22, padding: 20}}>
-        Happening Globally
-      </Text>
+    <CategoryHeader categorytopic = "Happening Globally"></CategoryHeader>
       <View style = {{height: newsboxheight, flex:1}}>
         <ScrollView horizontal = {true} contentContainerStyle={{ paddingLeft:20, flexGrow: 1}}  showsHorizontalScrollIndicator={false}>
           <Newscategories imagesource={{ uri: 'https://imageresizer.static9.net.au/iL1wz7t6ymcD86bayzOWbLTiFp8=/800x0/https%3A%2F%2Fprod.static9.net.au%2Ffs%2F39a838f6-f17d-4633-aada-fdf48d80a091'}} 
@@ -131,10 +131,9 @@ return(
       </View>
     </View>
     <View>
-      <Text style={{fontWeight :'bold', fontSize: 22, padding: 20}}>
-        For You
-      </Text>
-      <View style = {{height: newsboxheight, flex:1}}>
+    <CategoryHeader categorytopic = "For You"></CategoryHeader>
+
+      <View style = {{ marginBottom:100, height: newsboxheight, flex:1}}>
         <ScrollView horizontal = {true} contentContainerStyle={{ paddingLeft:20, flexGrow: 1}}  showsHorizontalScrollIndicator={false}>
           <Newscategories imagesource={{ uri: 'https://imageresizer.static9.net.au/iL1wz7t6ymcD86bayzOWbLTiFp8=/800x0/https%3A%2F%2Fprod.static9.net.au%2Ffs%2F39a838f6-f17d-4633-aada-fdf48d80a091'}} 
         newsdescription= "The true size of the ancient shark megalodon revealed " />
@@ -144,7 +143,9 @@ return(
         newsdescription= "The true size of the ancient shark megalodon revealed" />
         <Newscategories imagesource={{ uri: 'https://imageresizer.static9.net.au/iL1wz7t6ymcD86bayzOWbLTiFp8=/800x0/https%3A%2F%2Fprod.static9.net.au%2Ffs%2F39a838f6-f17d-4633-aada-fdf48d80a091'}} 
         newsdescription= "The true size of the ancient shark megalodon revealed" />
+
         </ScrollView>
+        
       </View>
     </View>
 </ScrollView>
@@ -315,14 +316,14 @@ const styles = StyleSheet.create({
     height:50,
     fontSize:18,
   },
-  intButton: {borderColor:"#35246A", 
+  intButton: {borderColor: secondarycolor, 
     borderWidth: 2,
     borderRadius: 10,
     width:100,
     height:50, 
     alignItems:'center',
     padding:10,
-    backgroundColor:'#35246A'},
+    backgroundColor: secondarycolor},
   intButtonWide: {borderColor:"#35246A", 
     borderWidth: 2,
     borderRadius: 15,
