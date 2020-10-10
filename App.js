@@ -202,7 +202,7 @@ const Login = ({navigation}) => {
       </View>
       <Text>or you can sign in with</Text>
       <View style ={{alignItems: 'center',flexDirection:'row', paddingBottom:10, justifyContent:"space-evenly"}}>
-      <TouchableOpacity onPress={() => navigation.navigate('profile')}>   
+      <TouchableOpacity>   
         <Image style={{height: 100, resizeMode: 'contain'}} source={require('./g.png')}></Image>
       </TouchableOpacity>
       <TouchableOpacity>   
