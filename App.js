@@ -9,6 +9,7 @@
 import React from 'react';
 import {render} from "react-dom";
 import Newscategories from './components/Newscategories'
+import Icon from 'react-native-vector-icons/AntDesign';
 import {
   SafeAreaView,
   StyleSheet,
@@ -75,14 +76,40 @@ const App = () => {
   }/>
         <Stack.Screen name ="SignIn" component = {SignIn}  options={{ headerShown: false }} />
         <Stack.Screen name = "homescreen" component = {homescreen} options={{headerShown: false}} />
+        <Stack.Screen name = "profile" component = {profile} options={{headerShown: false}} />
       </Stack.Navigator>
     </NavigationContainer>
   )
 }
-const homescreen = () =>{
+const profile = () => {
+  const [name, onChangeText] = React.useState('');
+  return (
+  <View style={styles.container}>
+    <Image style={{height:200,width:200,borderRadius:200/2}} source={require("./dude.jpg")}/>
+    <Text textAlign = {"center"} style={{fontSize:30, color:"#35246A"}}> User Name </Text>
+    <TouchableOpacity style = {styles.settings}>
+      <Text style ={{color:'#35246A',fontSize:20,paddingRight:105,marginTop:4}}> Categories </Text>
+      <Icon name="rightcircleo" size={25} color="#35246A" style={{marginTop:5}}/>
+    </TouchableOpacity>
+    <TouchableOpacity style = {styles.settings}>
+      <Text style ={{color:'#35246A',fontSize:20,paddingRight:74,marginTop:4}}> Saved Articles </Text>
+      <Icon name="rightcircleo" size={25} color="#35246A" style={{marginTop:5}}/>
+    </TouchableOpacity>
+    <TouchableOpacity style = {styles.settings}>
+      <Text style ={{color:'#35246A',fontSize:20,paddingRight:140,marginTop:4}}> Logout </Text>
+      <Icon name="rightcircleo" size={25} color="#35246A" style={{marginTop:5}}/>
+    </TouchableOpacity>
+  </View>
+  )
+}
+const homescreen = ({navigation}) =>{
   let newsbox = 200
 return(
-  <ScrollView style={{backgroundColor: "#ff6622"}}>
+  <ScrollView style={{backgroundColor: "white"}}>
+    <TouchableNativeFeedback onPress={() => navigation.navigate('profile')}>
+      <Icon name="user" size={30} color="#35246A" style={{position:"absolute", top:30,right:30, zIndex:1}} />
+    </TouchableNativeFeedback>
+    
     <View>
       <Text style={{fontWeight :'bold', fontSize: 22, padding: 30}}>
         Happening in Australia
@@ -175,7 +202,7 @@ const Login = ({navigation}) => {
       </View>
       <Text>or you can sign in with</Text>
       <View style ={{alignItems: 'center',flexDirection:'row', paddingBottom:10, justifyContent:"space-evenly"}}>
-      <TouchableOpacity>   
+      <TouchableOpacity onPress={() => navigation.navigate('profile')}>   
         <Image style={{height: 100, resizeMode: 'contain'}} source={require('./g.png')}></Image>
       </TouchableOpacity>
       <TouchableOpacity>   
@@ -267,14 +294,15 @@ const SignIn = ({navigation}) => {
 }
 // blue -> #87CEFA
 // gray -> #E0E0E0
+// #EAE4D8
 const styles = StyleSheet.create({
   container: {flex:1,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor:'#EAE4D8'
+    backgroundColor:'white'
 },
   input: { height: 40, backgroundColor: "white",
-    borderColor: 'white', 
+    borderColor: '#35246A', 
     borderWidth: 2,
     borderRadius: 10,
     textAlign:"center",
@@ -319,6 +347,29 @@ const styles = StyleSheet.create({
     backgroundColor:'#35246A'},  
   buttonText: {textAlign:"center",
     color:"white",
-    fontSize:18}   
+    fontSize:18},
+  inputProfile: { backgroundColor:"white",
+  borderColor: 'white', 
+  borderWidth: 2,
+  borderRadius: 20,
+  textAlign:"center",
+  width: 300,
+  height:50,
+  fontSize:18,
+  marginTop:20
+
+  },
+  settings: {
+    backgroundColor: "white",
+    borderColor: '#35246A', 
+    borderWidth: 2,
+    borderRadius: 10,
+    height:40,
+    width: 250,
+    fontSize:18,
+    flexDirection:"row",
+    marginTop:10
+
+  }    
 } )
 export default App;
