@@ -21,6 +21,7 @@ import HappenGlobal from './HappenGlobal';
 import {australiaNews} from '../resources/dummy-news/australia';
 import {worldNews} from '../resources/dummy-news/world';
 import {forYouNews} from '../resources/dummy-news/foryou';
+import { theme } from '../resources/colour-scheme/theme';
 
 export const Stack = createStackNavigator();
 
@@ -29,8 +30,8 @@ function HappeningStack() {
     <Stack.Navigator
       initialRouteName="Happening"
       screenOptions={{
-        headerStyle: {backgroundColor: '#42f44b'},
-        headerTintColor: '#fff',
+        headerStyle: {backgroundColor: theme.primaryColor},
+        headerTintColor: theme.textLight,
         headerTitleStyle: {fontWeight: 'bold'},
       }}>
       <Stack.Screen
@@ -47,7 +48,7 @@ export default function HomePage() {
     <Tab.Navigator
       initialRouteName="Feed"
       tabBarOptions={{
-        activeTintColor: '#42f44b',
+        activeTintColor: theme.primaryColor,
       }}>
       <Tab.Screen
         name="HomeStack"
@@ -116,12 +117,12 @@ NewsRowSection.propTypes = {
 
 export const Home = ({navigation}) => {
   return (
-    <ScrollView style={{backgroundColor: '#ff6622'}}>
+    <ScrollView style={{backgroundColor: theme.backgroundColor}}>
       <TouchableNativeFeedback onPress={() => navigation.navigate('profile')}>
         <Icon
           name="user"
           size={30}
-          color="#35246A"
+          color={theme.primaryColor}
           style={{position: 'absolute', top: 30, right: 30, zIndex: 1}}
         />
       </TouchableNativeFeedback>
@@ -203,7 +204,7 @@ const styles = StyleSheet.create({
   },
   container: {
     flex: 1,
-    backgroundColor: '#DFDACD',
+    backgroundColor: theme.backgroundColor,
     justifyContent: 'center',
     alignItems: 'center',
   },
@@ -219,14 +220,14 @@ const styles = StyleSheet.create({
   },
 
   buttoncontainer: {
-    borderColor: '#35246A',
+    borderColor: theme.primaryColor,
     borderWidth: 2,
     borderRadius: 10,
     width: 100,
     height: 50,
     alignItems: 'center',
     padding: 10,
-    backgroundColor: '#35246A',
+    backgroundColor: theme.primaryColor,
   },
   buttontext: {
     textAlign: 'center',

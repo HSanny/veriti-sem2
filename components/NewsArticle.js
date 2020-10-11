@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React from 'react';
 import {
   Dimensions,
   View,
@@ -9,6 +9,8 @@ import {
   ScrollView,
 } from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
+import { theme } from '../resources/colour-scheme/theme';
+import {styles} from './styles';
 
 export const NewsArticle = ({route, navigation}) => {
   const windowWidth = Dimensions.get('window').width;
@@ -18,12 +20,12 @@ export const NewsArticle = ({route, navigation}) => {
   return (
     <ScrollView>
       <View
-        style={{
+        style={[styles.container, {
           flex: 1,
           alignItems: 'flex-start',
-        }}>
+        }]}>
         <TouchableOpacity onPress={() => navigation.navigate('Home')}>
-          <Icon name="close" size={50} color="black" />
+          <Icon name="close" size={50} color={theme.primaryColor} />
         </TouchableOpacity>
         <View>
           <Image
@@ -55,7 +57,7 @@ export const NewsArticle = ({route, navigation}) => {
             style={{
               marginTop: 20,
               marginBottom: 5,
-              color: '#35246A',
+              color: theme.primaryColor,
               fontSize: 32,
               fontWeight: 'bold',
             }}>
@@ -63,7 +65,7 @@ export const NewsArticle = ({route, navigation}) => {
           </Text>
           <Text
             style={{
-              color: '#555',
+              color: theme.textGrey,
               fontSize: 28,
               marginBottom: 10,
             }}>
@@ -82,18 +84,10 @@ export const NewsArticle = ({route, navigation}) => {
 const Paragraph = (props) => (
   <Text
     style={{
-      color: 'black',
+      color: theme.textDark,
       fontSize: 18,
       marginVertical: 10,
     }}>
     {props.children}
   </Text>
 );
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});

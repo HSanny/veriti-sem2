@@ -7,6 +7,7 @@ import {
   TouchableOpacity
 } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
+import { theme } from '../resources/colour-scheme/theme';
 
 const Newscategories = (props) => {
   let newsbox = 200;
@@ -30,12 +31,12 @@ const Newscategories = (props) => {
           flex: 1,
           height: newsbox,
           width: newsbox,
-          borderColor: '#35246A',
+          borderColor: theme.primaryColor,
           borderRadius: 10,
           alignItems: 'center',
           justifyContent: 'center',
           marginRight: 5,
-          backgroundColor: '#35246A',
+          backgroundColor: theme.primaryColor,
         }}
       >
         <View style={{flex: 2}}>

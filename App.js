@@ -35,6 +35,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import { createStackNavigator } from '@react-navigation/stack'
 import { styles } from './components/styles';
+import { theme } from './resources/colour-scheme/theme';
 
 
 const Tab = createBottomTabNavigator();
@@ -44,8 +45,8 @@ function HomeStack() {
       <Stack.Navigator
         initialRouteName="Home"
         screenOptions={{
-          headerStyle: { backgroundColor: '#42f44b' },
-          headerTintColor: '#fff',
+          headerStyle: { backgroundColor: theme.primaryColor },
+          headerTintColor: theme.textLight,
           headerTitleStyle: { fontWeight: 'bold' }
         }}>
         <Stack.Screen
@@ -61,18 +62,18 @@ const profile = () => {
   return (
   <View style={styles.container}>
     <Image style={{height:200,width:200,borderRadius:200/2}} source={require("./resources/dude.jpg")}/>
-    <Text textAlign = {"center"} style={{fontSize:30, color:"#35246A"}}> User Name </Text>
+    <Text textAlign = {"center"} style={{fontSize:30, color: theme.primaryColor}}> User Name </Text>
     <TouchableOpacity style = {styles.settings}>
-      <Text style ={{color:'#35246A',fontSize:20,paddingRight:105,marginTop:4}}> Categories </Text>
-      <Icon name="rightcircleo" size={25} color="#35246A" style={{marginTop:5}}/>
+      <Text style ={{color: theme.primaryColor,fontSize:20,paddingRight:105,marginTop:4}}> Categories </Text>
+      <Icon name="rightcircleo" size={25} color={theme.primaryColor} style={{marginTop:5}}/>
     </TouchableOpacity>
     <TouchableOpacity style = {styles.settings}>
-      <Text style ={{color:'#35246A',fontSize:20,paddingRight:74,marginTop:4}}> Saved Articles </Text>
-      <Icon name="rightcircleo" size={25} color="#35246A" style={{marginTop:5}}/>
+      <Text style ={{color: theme.primaryColor,fontSize:20,paddingRight:74,marginTop:4}}> Saved Articles </Text>
+      <Icon name="rightcircleo" size={25} color={theme.primaryColor} style={{marginTop:5}}/>
     </TouchableOpacity>
     <TouchableOpacity style = {styles.settings}>
-      <Text style ={{color:'#35246A',fontSize:20,paddingRight:140,marginTop:4}}> Logout </Text>
-      <Icon name="rightcircleo" size={25} color="#35246A" style={{marginTop:5}}/>
+      <Text style ={{color: theme.primaryColor,fontSize:20,paddingRight:140,marginTop:4}}> Logout </Text>
+      <Icon name="rightcircleo" size={25} color={theme.primaryColor} style={{marginTop:5}}/>
     </TouchableOpacity>
   </View>
   )
@@ -83,8 +84,8 @@ function HappeningStack(){
         <Stack.Navigator
             initialRouteName="Happening"
             screenOptions={{
-                headerStyle: { backgroundColor: '#42f44b' },
-                headerTintColor: '#fff',
+                headerStyle: { backgroundColor: theme.primaryColor },
+                headerTintColor: theme.textLight,
                 headerTitleStyle: { fontWeight: 'bold' }
       }}>
         <Stack.Screen
@@ -118,7 +119,7 @@ function HomePage() {
         <Tab.Navigator
           initialRouteName="Feed"
           tabBarOptions={{
-            activeTintColor: '#42f44b',
+            activeTintColor: theme.secondaryColour,
           }}>
           <Tab.Screen
             name="HomeStack"

@@ -8,6 +8,7 @@ import ForYou from './ForYou';
 import InAus from './InAus';
 import HappenGlobal from './HappenGlobal';
 import Newscategories from '../components/NewsCategories'
+import { theme } from '../resources/colour-scheme/theme';
 
 
 
@@ -20,8 +21,8 @@ function HomeStack() {
       <Stack.Navigator
         initialRouteName="Home"
         screenOptions={{
-          headerStyle: { backgroundColor: '#42f44b' },
-          headerTintColor: '#fff',
+          headerStyle: { backgroundColor: theme.primaryColor },
+          headerTintColor: theme.textLight,
           headerTitleStyle: { fontWeight: 'bold' }
         }}>
         <Stack.Screen
@@ -39,8 +40,8 @@ function HappeningStack(){
         <Stack.Navigator
             initialRouteName="Happening"
             screenOptions={{
-                headerStyle: { backgroundColor: '#42f44b' },
-                headerTintColor: '#fff',
+                headerStyle: { backgroundColor: theme.primaryColor },
+                headerTintColor: theme.primaryColor,
                 headerTitleStyle: { fontWeight: 'bold' }
       }}>
         <Stack.Screen
@@ -58,7 +59,7 @@ export default function HomePage() {
         <Tab.Navigator
           initialRouteName="Feed"
           tabBarOptions={{
-            activeTintColor: '#42f44b',
+            activeTintColor: theme.secondaryColour,
           }}>
           <Tab.Screen
             name="HomeStack"
@@ -109,7 +110,7 @@ export default function HomePage() {
   const HomeScreen = ({ navigation }) => {
       let newsbox = 200
     return (
-        <ScrollView style={{backgroundColor: "#ff6622"}}>
+        <ScrollView style={{backgroundColor: theme.backgroundColor}}>
         <View>
           <Text style={{fontWeight :'bold', fontSize: 22, padding: 30}}>
             Happening in Australia
@@ -221,9 +222,6 @@ export default function HomePage() {
     );
   }
   
-
-
-
 const styles = StyleSheet.create({
     button: {
         alignItems: 'center',
@@ -234,7 +232,7 @@ const styles = StyleSheet.create({
       },
     container:{
         flex : 1,
-        backgroundColor : '#DFDACD',
+        backgroundColor : theme.backgroundColor,
         justifyContent: 'center',
         alignItems : 'center'
     },
@@ -251,14 +249,14 @@ const styles = StyleSheet.create({
     },
     
     buttoncontainer:{
-        borderColor:"#35246A", 
+        borderColor: theme.primaryColor, 
         borderWidth: 2,
         borderRadius: 10,
         width:100,
         height:50, 
         alignItems:'center',
         padding:10,
-        backgroundColor:'#35246A'
+        backgroundColor: theme.primaryColor
     },
     buttontext:{
         textAlign:"center",
