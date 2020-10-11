@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import {Text, TextInput, View, TouchableOpacity,Image,StyleSheet} from 'react-native'
 import {createStackNavigator, createAppContainer} from '@react-navigation/stack'
+import { theme } from '../resources/colour-scheme/theme';
 
 
 class User {
@@ -121,7 +122,7 @@ export const RegisterPage = ({navigation}) => {
 const styles = StyleSheet.create({
     container:{
         flex : 1,
-        backgroundColor : '#DFDACD',
+        backgroundColor : theme.backgroundColor,
         justifyContent: 'center',
         alignItems : 'center'
     },
@@ -155,7 +156,7 @@ const styles = StyleSheet.create({
         height:50, 
         alignItems:'center',
         padding:10,
-        backgroundColor:'#35246A'
+        backgroundColor: theme.primaryColor
     },
     buttontext:{
         textAlign:"center",

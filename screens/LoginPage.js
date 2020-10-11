@@ -5,6 +5,7 @@ import 'react-native-gesture-handler'
 import {RegisterPage} from '../screens/RegisterPage'
 import HomePage from '../screens/HomePage'
 import { NavigationContainer, StackActions } from '@react-navigation/native';
+import { theme } from '../resources/colour-scheme/theme';
 
 
   
@@ -84,7 +85,7 @@ export default function App (){
 const styles = StyleSheet.create({
     container:{
         flex : 1,
-        backgroundColor : '#DFDACD',
+        backgroundColor : theme.backgroundColor,
         justifyContent: 'center',
         alignItems : 'center'
     },
@@ -108,7 +109,7 @@ const styles = StyleSheet.create({
         height:50, 
         alignItems:'center',
         padding:10,
-        backgroundColor:'#35246A'
+        backgroundColor: theme.primaryColor
     },
     buttontext:{
         textAlign:"center",
