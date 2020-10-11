@@ -19,6 +19,7 @@ const Newscategories = (props) => {
     <TouchableOpacity
       onPress={() => {
         navigation.navigate('NewsArticle', {
+          id: props.id,
           img: props.imagesource,
           title: props.newsdescription,
           source: props.source,

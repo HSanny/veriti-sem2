@@ -96,8 +96,10 @@ const NewsRowSection = (props) => {
           horizontal={true}
           contentContainerStyle={{paddingLeft: 20, flexGrow: 1}}
           showsHorizontalScrollIndicator={false}>
-          {props.newsArray && props.newsArray.map((news) => (
+          {props.newsArray && props.newsArray.map((news, index) => (
             <Newscategories
+              key={index}
+              id={news.id}
               imagesource={{uri: news.imageSrc}}
               newsdescription={news.title}
               source={news.source}

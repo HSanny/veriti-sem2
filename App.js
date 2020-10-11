@@ -29,14 +29,13 @@ import Login from './components/Login';
 import { Home, HappeningScreen, Stack } from "./components/Home";
 import ForYou from './components/ForYou';
 import SignUp from "./components/SignUp";
-import { NewsArticle } from './components/NewsArticle';
+import NewsArticle from './components/NewsArticle';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { NavigationContainer } from '@react-navigation/native';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import { createStackNavigator } from '@react-navigation/stack'
 import { styles } from './components/styles';
 import { theme } from './resources/colour-scheme/theme';
-
 
 const Tab = createBottomTabNavigator();
 
@@ -57,7 +56,7 @@ function HomeStack() {
   );
 }
 
-const profile = () => {
+const profile = ({navigation}) => {
   const [name, onChangeText] = React.useState('');
   return (
   <View style={styles.container}>
@@ -71,7 +70,7 @@ const profile = () => {
       <Text style ={{color: theme.primaryColor,fontSize:20,paddingRight:74,marginTop:4}}> Saved Articles </Text>
       <Icon name="rightcircleo" size={25} color={theme.primaryColor} style={{marginTop:5}}/>
     </TouchableOpacity>
-    <TouchableOpacity style = {styles.settings}>
+    <TouchableOpacity style = {styles.settings} onPress={() => navigation.navigate('Login')}>
       <Text style ={{color: theme.primaryColor,fontSize:20,paddingRight:140,marginTop:4}}> Logout </Text>
       <Icon name="rightcircleo" size={25} color={theme.primaryColor} style={{marginTop:5}}/>
     </TouchableOpacity>
@@ -104,7 +103,7 @@ function App (){
         <NavigationContainer>
           <AppStackNavigator.Navigator>
             <AppStackNavigator.Screen name = "Login" component ={Login} options={{headerShown:false}}/>
-            <AppStackNavigator.Screen name = "Register" component ={SignUp} options={{headerShown:false}}/>
+            <AppStackNavigator.Screen name = "SignUp" component ={SignUp} options={{headerShown:false}}/>
             <AppStackNavigator.Screen name = "Home" component ={HomePage} options={{headerShown:false}}/>
             <AppStackNavigator.Screen name = "profile" component = {profile} options={{headerShown: false}} />
             <AppStackNavigator.Screen name = "NewsArticle" component = {NewsArticle} options={{headerShown: false}} />
@@ -113,7 +112,7 @@ function App (){
     );
 }
 
-function HomePage() {
+const HomePage = ({route, navigation}) =>{
     return (
       
         <Tab.Navigator
@@ -141,20 +140,20 @@ function HomePage() {
               tabBarLabel: 'Happening',
               tabBarIcon: ({ color, size }) => (
                 <MaterialCommunityIcons
-                  name="home"
+                  name="earth"
                   color={color}
                   size={size}
                 />
               ),
             }} />
             <Tab.Screen
-                name = "ForYou"
-                component = {ForYou}
+                name = "UserProfile"
+                component = {profile}
                 options = {{
-                    tabBarLabel:'ForYou',
+                    tabBarLabel:'Profile',
                     tabBarIcon:({color, size}) =>(
                         <MaterialCommunityIcons
-                            name = "home"
+                            name = "account"
                             color = {color}
                             size = {size}
                         />
