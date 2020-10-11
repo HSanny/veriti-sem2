@@ -29,6 +29,7 @@ import Login from './components/Login';
 import { Home, HappeningScreen, Stack } from "./components/Home";
 import ForYou from './components/ForYou';
 import SignUp from "./components/SignUp";
+import { NewsArticle } from './components/NewsArticle';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { NavigationContainer } from '@react-navigation/native';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
@@ -105,6 +106,7 @@ function App (){
             <AppStackNavigator.Screen name = "Register" component ={SignUp} options={{headerShown:false}}/>
             <AppStackNavigator.Screen name = "Home" component ={HomePage} options={{headerShown:false}}/>
             <AppStackNavigator.Screen name = "profile" component = {profile} options={{headerShown: false}} />
+            <AppStackNavigator.Screen name = "NewsArticle" component = {NewsArticle} options={{headerShown: false}} />
           </AppStackNavigator.Navigator>
         </NavigationContainer>
     );
