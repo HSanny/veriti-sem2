@@ -85,7 +85,12 @@ export default function HomePage() {
 export const Home = ({ navigation }) => {
     let newsbox = 200
   return (
-      <ScrollView style={{backgroundColor: "#ff6622"}}>
+    <ScrollView style={{backgroundColor: "#ff6622"}}>
+
+    <TouchableNativeFeedback onPress={() => navigation.navigate('profile')}>
+      <Icon name="user" size={30} color="#35246A" style={{position:"absolute", top:30,right:30, zIndex:1}} />
+    </TouchableNativeFeedback>
+
       <View>
         <Text style={{fontWeight :'bold', fontSize: 22, padding: 30}}>
           Happening in Australia

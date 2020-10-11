@@ -7,7 +7,24 @@
  */
 
 import React from 'react';
-import { StyleSheet, Text, View} from 'react-native';
+import {render} from "react-dom";
+import Newscategories from './components/Newscategories'
+import Icon from 'react-native-vector-icons/AntDesign';
+import {
+  SafeAreaView,
+  StyleSheet,
+  ScrollView,
+  View,
+  Text,
+  StatusBar,
+  Button,
+  TextInput,
+  TouchableNativeFeedback,
+  TouchableOpacity,
+  TextView,
+  Image,
+  Dimensions
+} from 'react-native';
 
 import Login from './components/Login';
 import { Home, HappeningScreen, Stack } from "./components/Home";
@@ -18,21 +35,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import { createStackNavigator } from '@react-navigation/stack'
 
-/*
-import { NavigationContainer } from '@react-navigation/native';
-const App = () => {
-  return (
-    <NavigationContainer>
-      <Stack.Navigator>
-        <Stack.Screen name = "Login" component={Login} options={{ headerShown: false }
-  }/>
-        <Stack.Screen name = "SignIn" component = {SignUp}  options={{ headerShown: false }} />
-        <Stack.Screen name = "homescreen" component = {Home} options={{headerShown: false}} />
-      </Stack.Navigator>
-    </NavigationContainer>
-  )
-}
-*/
+
 const Tab = createBottomTabNavigator();
 
 function HomeStack() {
@@ -46,10 +49,32 @@ function HomeStack() {
         }}>
         <Stack.Screen
           name="Home"
-          component={Home}
+          component={HomeScreen}
           options={{ title: 'Home Page' }}/>
       </Stack.Navigator>
   );
+}
+
+const profile = () => {
+  const [name, onChangeText] = React.useState('');
+  return (
+  <View style={styles.container}>
+    <Image style={{height:200,width:200,borderRadius:200/2}} source={require("./dude.jpg")}/>
+    <Text textAlign = {"center"} style={{fontSize:30, color:"#35246A"}}> User Name </Text>
+    <TouchableOpacity style = {styles.settings}>
+      <Text style ={{color:'#35246A',fontSize:20,paddingRight:105,marginTop:4}}> Categories </Text>
+      <Icon name="rightcircleo" size={25} color="#35246A" style={{marginTop:5}}/>
+    </TouchableOpacity>
+    <TouchableOpacity style = {styles.settings}>
+      <Text style ={{color:'#35246A',fontSize:20,paddingRight:74,marginTop:4}}> Saved Articles </Text>
+      <Icon name="rightcircleo" size={25} color="#35246A" style={{marginTop:5}}/>
+    </TouchableOpacity>
+    <TouchableOpacity style = {styles.settings}>
+      <Text style ={{color:'#35246A',fontSize:20,paddingRight:140,marginTop:4}}> Logout </Text>
+      <Icon name="rightcircleo" size={25} color="#35246A" style={{marginTop:5}}/>
+    </TouchableOpacity>
+  </View>
+  )
 }
 
 function HappeningStack(){
@@ -71,6 +96,7 @@ function HappeningStack(){
 }
 
 const AppStackNavigator = createStackNavigator();
+
 function App (){
     return(
         <NavigationContainer>
@@ -78,6 +104,7 @@ function App (){
             <AppStackNavigator.Screen name = "Login" component ={Login} options={{headerShown:false}}/>
             <AppStackNavigator.Screen name = "Register" component ={SignUp} options={{headerShown:false}}/>
             <AppStackNavigator.Screen name = "Home" component ={HomePage} options={{headerShown:false}}/>
+            <AppStackNavigator.Screen name = "profile" component = {profile} options={{headerShown: false}} />
           </AppStackNavigator.Navigator>
         </NavigationContainer>
     );
@@ -134,6 +161,5 @@ function HomePage() {
       
     );
   }
-
 
 export default App;

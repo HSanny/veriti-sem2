@@ -54,5 +54,16 @@ export const styles = StyleSheet.create({
     backgroundColor:'#35246A'},  
   buttonText: {textAlign:"center",
     color:"white",
-    fontSize:18}   
+    fontSize:18},
+  settings: {
+    backgroundColor: "white",
+    borderColor: '#35246A', 
+    borderWidth: 2,
+    borderRadius: 10,
+    height:40,
+    width: 250,
+    fontSize:18,
+    flexDirection:"row",
+    marginTop:10
+  } 
 });
