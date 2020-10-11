@@ -55,5 +55,5 @@ We also created a website for our Veriti Project which contains overview and mem
 - [Microsoft Planner for task log](https://tasks.office.com/ANU365.onmicrosoft.com/en-US/Home/Planner/#/plantaskboard?groupId=b281e11d-1009-476d-8907-ebd2be2edb48&planId=kZ83flB2k06jqDMWq27Jn8gAFks5)
 - [Communication Document](https://docs.google.com/document/d/1Y_dyhCAuoTM0jxEbyiXzjQaNaDeoiTfVqYjiQvUADnQ/edit?usp=sharing)
 - [Work Log](https://docs.google.com/spreadsheets/d/1nb6p_P_V1yTU3rJQp2C5U_ZMiiq-XA8H-r1yHunGqgI/edit?usp=sharing)
-- [Jiro]()
+- User our [Jira Invite Link](https://id.atlassian.com/invite/p/jira-software?id=hs9nXMJKShK5KvTSNpuwyg) to get access to our [Jira Board](https://veriti.atlassian.net/secure/RapidBoard.jspa?rapidView=1&projectKey=VER)
 
