@@ -129,7 +129,7 @@ android {
     }
 
     defaultConfig {
-        applicationId "com.check"
+        applicationId "com.project"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 1
