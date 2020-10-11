@@ -23,6 +23,7 @@ import {worldNews} from '../resources/dummy-news/world';
 import {forYouNews} from '../resources/dummy-news/foryou';
 import { theme } from '../resources/colour-scheme/theme';
 
+export let newsCollection;
 export const Stack = createStackNavigator();
 
 function HappeningStack() {
@@ -84,7 +85,7 @@ export default function HomePage() {
   );
 }
 
-const NewsRowSection = (props) => {
+export const NewsRowSection = (props) => {
   const newsbox = 200;
   return (
     <View>
@@ -96,14 +97,20 @@ const NewsRowSection = (props) => {
           horizontal={true}
           contentContainerStyle={{paddingLeft: 20, flexGrow: 1}}
           showsHorizontalScrollIndicator={false}>
-          {props.newsArray && props.newsArray.map((news) => (
-            <Newscategories
-              imagesource={{uri: news.imageSrc}}
-              newsdescription={news.title}
-              source={news.source}
-              newsBody={news.body}
-            />
-          ))}
+          {props.newsArray && props.newsArray.map((news, index) => {
+            // Store in a map for now to fetch later on?
+            newsCollection.set(news.id, news);
+            return (
+              <Newscategories
+                key={index}
+                id={news.id}
+                imagesource={{uri: news.imageSrc}}
+                newsdescription={news.title}
+                source={news.source}
+                newsBody={news.body}
+              />
+            );
+          })}
         </ScrollView>
       </View>
     </View>
@@ -116,6 +123,7 @@ NewsRowSection.propTypes = {
 }
 
 export const Home = ({navigation}) => {
+  newsCollection = new Map();
   return (
     <ScrollView style={{backgroundColor: theme.backgroundColor}}>
       <TouchableNativeFeedback onPress={() => navigation.navigate('profile')}>

@@ -2,6 +2,9 @@ import {Component} from 'react';
 import {styles} from './styles';
 import React from 'react';
 import {View, Text, TextInput, TouchableOpacity, Image} from 'react-native';
+import { User, UserCollection } from './Users';
+
+export let userCollection;
 
 class Login extends Component {
   constructor(props) {
@@ -69,13 +72,25 @@ class Login extends Component {
           <View style={{paddingRight: 30}}>
             <TouchableOpacity
               style={styles.intButton}
-              onPress={() => this.props.navigation.navigate('Home')}>
+              onPress={() => {
+                this.props.navigation.navigate('Home');
+                // Add dummy user for now
+                const dummyUser = new User("user001", "somepassword", "John", "Smith", "john.smith@example.xyz");
+
+                // Add 3 saved articles at random (with replacement)
+                for (let i = 0; i < 3; i++) {
+                  dummyUser.addSavedNews(Math.floor(Math.random() * 11));
+                }
+
+                userCollection = new UserCollection();
+                userCollection.addNewUser(dummyUser);
+              }}>
               <Text style={styles.buttonText}> Login </Text>
             </TouchableOpacity>
           </View>
           <TouchableOpacity
             style={styles.intButton}
-            onPress={() => this.props.navigation.navigate('SignIn')}>
+            onPress={() => this.props.navigation.navigate('SignUp')}>
             <Text style={styles.buttonText}> Sign up </Text>
           </TouchableOpacity>
         </View>

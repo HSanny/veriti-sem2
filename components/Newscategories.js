@@ -12,13 +12,13 @@ import { theme } from '../resources/colour-scheme/theme';
 const Newscategories = (props) => {
   let newsbox = 200;
   
-  // This is a component rather than a screen, so we need to use
-  // a hook to navigate to a different screen
+  // For some reasons doesn't work using this.props.navigation
   const navigation = useNavigation();
   return (
     <TouchableOpacity
       onPress={() => {
         navigation.navigate('NewsArticle', {
+          id: props.id,
           img: props.imagesource,
           title: props.newsdescription,
           source: props.source,

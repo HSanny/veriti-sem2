@@ -9,39 +9,7 @@ import {
   Image,
 } from 'react-native';
 import { styles } from "./styles";
-
-class User {
-  constructor(userName, password, firstName, lastName, email) {
-    this.userName = userName
-    this.password = password
-    this.firstName = firstName
-    this.lastName = lastName
-    this.email = email 
-  }
-  get user() {
-    return this.userName
-  }
-  set user(name) {
-    this.userName = name
-  }
-  get pw() {
-    return this.pw
-  }
-  set pw(pass) {
-    this.password = pass 
-  }
-  get fullName() {
-    return this.firstName + " " +  this.lastName
-  }
-  get mail() {
-    return this.email
-  }
-  set mail(email) {
-    this.email = email
-  }
-}
-
-let users = [];
+import { User, addNewUser } from "../components/Users";
 
 export default class SignUp extends Component {
   constructor(props) {
@@ -121,8 +89,7 @@ export default class SignUp extends Component {
           />
         </View>
         <TouchableOpacity style = {styles.intButtonWide} onPress={() => { 
-          const user1 = new User(userName,password,fname,lname,email);
-          users.push(user1);
+          addNewUser(new User(userName,password,fname,lname,email));
           navigation.navigate('Login')}}>
             <Text style = {styles.buttonText}> Create Account </Text>
         </TouchableOpacity>
