@@ -1,4 +1,5 @@
 import {Component} from 'react';
+import PropTypes from 'prop-types';
 import React from 'react';
 import {
   Text,
@@ -82,9 +83,38 @@ export default function HomePage() {
   );
 }
 
+const NewsRowSection = (props) => {
+  const newsbox = 200;
+  return (
+    <View>
+      <Text style={{fontWeight: 'bold', fontSize: 22, padding: 30}}>
+        {props.sectionTitle}
+      </Text>
+      <View style={{height: newsbox, flex: 1}}>
+        <ScrollView
+          horizontal={true}
+          contentContainerStyle={{paddingLeft: 20, flexGrow: 1}}
+          showsHorizontalScrollIndicator={false}>
+          {props.newsArray && props.newsArray.map((news) => (
+            <Newscategories
+              imagesource={{uri: news.imageSrc}}
+              newsdescription={news.title}
+              source={news.source}
+              newsBody={news.body}
+            />
+          ))}
+        </ScrollView>
+      </View>
+    </View>
+  );
+}
+
+NewsRowSection.propTypes = {
+  sectionTitle: PropTypes.string.isRequired,
+  newsArray: PropTypes.array.isRequired,
+}
+
 export const Home = ({navigation}) => {
-  let newsbox = 200;
-  console.log(australiaNews);
   return (
     <ScrollView style={{backgroundColor: '#ff6622'}}>
       <TouchableNativeFeedback onPress={() => navigation.navigate('profile')}>
@@ -95,67 +125,18 @@ export const Home = ({navigation}) => {
           style={{position: 'absolute', top: 30, right: 30, zIndex: 1}}
         />
       </TouchableNativeFeedback>
-
-      <View>
-        <Text style={{fontWeight: 'bold', fontSize: 22, padding: 30}}>
-          Happening in Australia
-        </Text>
-        <View style={{height: newsbox, flex: 1}}>
-          <ScrollView
-            horizontal={true}
-            contentContainerStyle={{paddingLeft: 20, flexGrow: 1}}
-            showsHorizontalScrollIndicator={false}>
-            {australiaNews.map((news) => (
-              <Newscategories
-                imagesource={{uri: news.imageSrc}}
-                newsdescription={news.title}
-                source={news.source}
-                newsBody={news.body}
-              />
-            ))}
-          </ScrollView>
-        </View>
-      </View>
-      <View>
-        <Text style={{fontWeight: 'bold', fontSize: 22, padding: 30}}>
-          Happening Globally
-        </Text>
-        <View style={{height: newsbox, flex: 1}}>
-          <ScrollView
-            horizontal={true}
-            contentContainerStyle={{paddingLeft: 20, flexGrow: 1}}
-            showsHorizontalScrollIndicator={false}>
-            {worldNews.map((news) => (
-              <Newscategories
-                imagesource={{uri: news.imageSrc}}
-                newsdescription={news.title}
-                source={news.source}
-                newsBody={news.body}
-              />
-            ))}
-          </ScrollView>
-        </View>
-      </View>
-      <View>
-        <Text style={{fontWeight: 'bold', fontSize: 22, padding: 30}}>
-          For You
-        </Text>
-        <View style={{height: newsbox, flex: 1}}>
-          <ScrollView
-            horizontal={true}
-            contentContainerStyle={{paddingLeft: 20, flexGrow: 1}}
-            showsHorizontalScrollIndicator={false}>
-            {forYouNews.map((news) => (
-              <Newscategories
-                imagesource={{uri: news.imageSrc}}
-                newsdescription={news.title}
-                source={news.source}
-                newsBody={news.body}
-              />
-            ))}
-          </ScrollView>
-        </View>
-      </View>
+      <NewsRowSection
+        sectionTitle="Happening in Australia"
+        newsArray={australiaNews}
+      />
+      <NewsRowSection
+        sectionTitle="Happening Globally"
+        newsArray={worldNews}
+      />
+      <NewsRowSection
+        sectionTitle="For You"
+        newsArray={forYouNews}
+      />
     </ScrollView>
   );
 };
