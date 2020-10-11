@@ -43,9 +43,11 @@ We also created a website for our Veriti Project which contains overview and mem
 - [Meeting Minutes](https://drive.google.com/drive/folders/1upavabqlHOQ221rhMnEXg1b_aurWXwzM?usp=sharing)
 - [Project Audit 1](https://drive.google.com/drive/folders/1zZ4Hds7zg0q5kHrIPcZpsEBuVZEf1eKw?usp=sharing)
 - [Project Audit 2](https://drive.google.com/drive/folders/12LV9tDTD6UX11c0YeKouG8se9HztCDTR?usp=sharing)
+- [Project Audit 3](https://drive.google.com/drive/folders/1BQvT1j25cB9adyOehPI4Y3LJ4qyay2-N)
 - [Research Done for the project](https://drive.google.com/drive/folders/1BQaTkJfzwxWLmFnne_T4A1lwFItyKDam?usp=sharing)
 - [Statement of Work](https://drive.google.com/drive/folders/1WRBmewPQiGX6eswLqQ27WqCG284EFoFX?usp=sharing)
 - [Feedback & Reflection](https://drive.google.com/drive/folders/1RJ87i5w2UAPCj1A7MinpT9vZ895SF5zU?usp=sharing)
+- [Showcase Video](https://drive.google.com/drive/folders/1lJdRYwLsQmvdvXhB1Rl1poJJ0w_n9bQ5)
 
 ## Rroject Management and Communication
 - [Miro Story Board](https://miro.com/app/board/o9J_kmvWyI8=/)
@@ -53,5 +55,5 @@ We also created a website for our Veriti Project which contains overview and mem
 - [Microsoft Planner for task log](https://tasks.office.com/ANU365.onmicrosoft.com/en-US/Home/Planner/#/plantaskboard?groupId=b281e11d-1009-476d-8907-ebd2be2edb48&planId=kZ83flB2k06jqDMWq27Jn8gAFks5)
 - [Communication Document](https://docs.google.com/document/d/1Y_dyhCAuoTM0jxEbyiXzjQaNaDeoiTfVqYjiQvUADnQ/edit?usp=sharing)
 - [Work Log](https://docs.google.com/spreadsheets/d/1nb6p_P_V1yTU3rJQp2C5U_ZMiiq-XA8H-r1yHunGqgI/edit?usp=sharing)
-
+- [Jiro]()
 
