@@ -7,7 +7,6 @@
  */
 
 import React from 'react';
-import {render} from "react-dom";
 import Newscategories from './components/Newscategories'
 import Icon from 'react-native-vector-icons/AntDesign';
 import {
@@ -34,6 +33,7 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { NavigationContainer } from '@react-navigation/native';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import { createStackNavigator } from '@react-navigation/stack'
+import { styles } from './components/styles';
 
 
 const Tab = createBottomTabNavigator();
@@ -49,7 +49,7 @@ function HomeStack() {
         }}>
         <Stack.Screen
           name="Home"
-          component={HomeScreen}
+          component={Home}
           options={{ title: 'Home Page' }}/>
       </Stack.Navigator>
   );
@@ -59,7 +59,7 @@ const profile = () => {
   const [name, onChangeText] = React.useState('');
   return (
   <View style={styles.container}>
-    <Image style={{height:200,width:200,borderRadius:200/2}} source={require("./dude.jpg")}/>
+    <Image style={{height:200,width:200,borderRadius:200/2}} source={require("./resources/dude.jpg")}/>
     <Text textAlign = {"center"} style={{fontSize:30, color:"#35246A"}}> User Name </Text>
     <TouchableOpacity style = {styles.settings}>
       <Text style ={{color:'#35246A',fontSize:20,paddingRight:105,marginTop:4}}> Categories </Text>

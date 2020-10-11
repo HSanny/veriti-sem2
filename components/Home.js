@@ -1,8 +1,9 @@
 import { Component } from 'react';
 import React from 'react';
-import {Text, View, TouchableOpacity, StyleSheet, SafeAreaView, ScrollView} from 'react-native';
+import {Text, View, TouchableOpacity, TouchableNativeFeedback, StyleSheet, SafeAreaView, ScrollView} from 'react-native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { createStackNavigator } from '@react-navigation/stack';
+import Icon from 'react-native-vector-icons/AntDesign';
 
 import Newscategories from "./Newscategories";
 import ForYou from './ForYou';
