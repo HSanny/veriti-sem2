@@ -32,7 +32,6 @@ export default class NewsArticle extends Component {
     } else {
       userCollection.getUser('user001').addSavedNews(newsId);
     }
-    console.log(userCollection.getUser('user001').savedNews);
     this.setState((state) => {
       state.isSaved = !state.isSaved;
       return state;

@@ -30,6 +30,7 @@ import { Home, HappeningScreen, Stack } from "./components/Home";
 import ForYou from './components/ForYou';
 import SignUp from "./components/SignUp";
 import NewsArticle from './components/NewsArticle';
+import SavedArticles, { SavedArticlesStack } from './components/SavedArticles';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { NavigationContainer } from '@react-navigation/native';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
@@ -56,7 +57,7 @@ function HomeStack() {
   );
 }
 
-const profile = ({navigation}) => {
+export const profile = ({navigation}) => {
   const [name, onChangeText] = React.useState('');
   return (
   <View style={styles.container}>
@@ -66,7 +67,7 @@ const profile = ({navigation}) => {
       <Text style ={{color: theme.primaryColor,fontSize:20,paddingRight:105,marginTop:4}}> Categories </Text>
       <Icon name="rightcircleo" size={25} color={theme.primaryColor} style={{marginTop:5}}/>
     </TouchableOpacity>
-    <TouchableOpacity style = {styles.settings}>
+    <TouchableOpacity style = {styles.settings} onPress={() => navigation.navigate('SavedArticles')}>
       <Text style ={{color: theme.primaryColor,fontSize:20,paddingRight:74,marginTop:4}}> Saved Articles </Text>
       <Icon name="rightcircleo" size={25} color={theme.primaryColor} style={{marginTop:5}}/>
     </TouchableOpacity>
@@ -96,6 +97,24 @@ function HappeningStack(){
     );
 }
 
+function ProfileStack(){
+    return(
+        <Stack.Navigator
+            initialRouteName="Profile"
+            screenOptions={{
+                headerStyle: { backgroundColor: theme.primaryColor },
+                headerTintColor: theme.textLight,
+                headerTitleStyle: { fontWeight: 'bold' }
+      }}>
+        <Stack.Screen
+            name="User Profile"
+            component={profile}
+            options={{ title: 'User Profile' }}/>
+        
+    </Stack.Navigator>
+    );
+}
+
 const AppStackNavigator = createStackNavigator();
 
 function App (){
@@ -107,6 +126,7 @@ function App (){
             <AppStackNavigator.Screen name = "Home" component ={HomePage} options={{headerShown:false}}/>
             <AppStackNavigator.Screen name = "profile" component = {profile} options={{headerShown: false}} />
             <AppStackNavigator.Screen name = "NewsArticle" component = {NewsArticle} options={{headerShown: false}} />
+            <AppStackNavigator.Screen name = "SavedArticles" component = {SavedArticles} options={{headerShown: false}} />
           </AppStackNavigator.Navigator>
         </NavigationContainer>
     );
@@ -134,13 +154,13 @@ const HomePage = ({route, navigation}) =>{
               ),
             }}  />
           <Tab.Screen
-            name="HappeningStack"
-            component={HappeningStack}
+            name="SavedArticlesStack"
+            component={SavedArticlesStack}
             options={{
-              tabBarLabel: 'Happening',
+              tabBarLabel: 'Saved Articles',
               tabBarIcon: ({ color, size }) => (
                 <MaterialCommunityIcons
-                  name="earth"
+                  name="newspaper"
                   color={color}
                   size={size}
                 />
@@ -148,7 +168,7 @@ const HomePage = ({route, navigation}) =>{
             }} />
             <Tab.Screen
                 name = "UserProfile"
-                component = {profile}
+                component = {ProfileStack}
                 options = {{
                     tabBarLabel:'Profile',
                     tabBarIcon:({color, size}) =>(

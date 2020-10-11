@@ -9,7 +9,7 @@ import {
   Image,
 } from 'react-native';
 import { styles } from "./styles";
-import { addNewUser } from "../components/Users";
+import { User, addNewUser } from "../components/Users";
 
 export default class SignUp extends Component {
   constructor(props) {

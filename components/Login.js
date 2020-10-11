@@ -76,6 +76,12 @@ class Login extends Component {
                 this.props.navigation.navigate('Home');
                 // Add dummy user for now
                 const dummyUser = new User("user001", "somepassword", "John", "Smith", "john.smith@example.xyz");
+
+                // Add 3 saved articles at random (with replacement)
+                for (let i = 0; i < 3; i++) {
+                  dummyUser.addSavedNews(Math.floor(Math.random() * 11));
+                }
+
                 userCollection = new UserCollection();
                 userCollection.addNewUser(dummyUser);
               }}>
