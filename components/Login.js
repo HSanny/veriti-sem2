@@ -4,7 +4,7 @@ import React from 'react';
 import {View, Text, TextInput, TouchableOpacity, Image} from 'react-native';
 import { User, UserCollection } from './Users';
 
-export let userCollection;
+export let userCollection = new UserCollection();
 
 class Login extends Component {
   constructor(props) {
@@ -73,18 +73,41 @@ class Login extends Component {
             <TouchableOpacity
               style={styles.intButton}
               onPress={() => {
-                this.props.navigation.navigate('Home');
-                // Add dummy user for now
-                const dummyUser = new User("user001", "somepassword", "John", "Smith", "john.smith@example.xyz");
+                fetch('http://10.0.2.2:8000/api/login', {
+                    method: 'POST',
+                    headers: {
+                      'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                      username: this.state.username,
+                      password: this.state.password
+                    })
+                  }
+                ).then(response => {
+                  if (response.status === 404) {
+                    throw new Error("User Not Found");
+                  } else if (response.status === 200) {
+                    return response.json();
+                  }
+                })
+                .then(json => {
+                  const user = json.user;
+                  let u = new User(user.username, user.firstname, user.lastname, user.email);
 
-                // Add 3 saved articles at random (with replacement)
-                for (let i = 0; i < 3; i++) {
-                  dummyUser.addSavedNews(Math.floor(Math.random() * 11));
-                }
+                  u.token = json.token;
+                  // Add 3 saved articles at random (with replacement)
+                  for (let i = 0; i < 3; i++) {
+                    u.addSavedNews(Math.floor(Math.random() * 11));
+                  }
 
-                userCollection = new UserCollection();
-                userCollection.addNewUser(dummyUser);
-              }}>
+                  userCollection.addNewUser(u);
+
+                  this.props.navigation.navigate('Home');
+                })
+                .catch((e) => {
+                  console.log(e.message);
+                })
+             }}>
               <Text style={styles.buttonText}> Login </Text>
             </TouchableOpacity>
           </View>
