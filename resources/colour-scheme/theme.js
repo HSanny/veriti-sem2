@@ -11,7 +11,7 @@ export const orange = '#ff6622';
 export const theme = {
   primaryColor: purple,
   secondaryColour: blue,
-  backgroundColor: cream,
+  backgroundColor: white,
   textLight: white,
   textGrey: darkGrey,
   textDark: black,

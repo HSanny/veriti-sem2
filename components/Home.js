@@ -1,6 +1,7 @@
 import {Component} from 'react';
 import PropTypes from 'prop-types';
 import React from 'react';
+import Video from 'react-native-video';
 import {
   Text,
   View,
@@ -9,10 +10,12 @@ import {
   StyleSheet,
   SafeAreaView,
   ScrollView,
+  FlatList
 } from 'react-native';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import {createStackNavigator} from '@react-navigation/stack';
 import Icon from 'react-native-vector-icons/AntDesign';
+import { SearchBar } from 'react-native-elements';
 
 import Newscategories from './Newscategories';
 import ForYou from './ForYou';
@@ -25,7 +28,8 @@ import { theme } from '../resources/colour-scheme/theme';
 
 export let newsCollection;
 export const Stack = createStackNavigator();
-
+var newsList = (australiaNews.map(function(obj) { return obj.title})).concat(worldNews.map(function(obj) { return obj.title; })).concat(forYouNews.map(function(obj) { return obj.title; }));
+var newsList2 = australiaNews.concat(worldNews).concat(forYouNews);
 function HappeningStack() {
   return (
     <Stack.Navigator
@@ -124,16 +128,44 @@ NewsRowSection.propTypes = {
 
 export const Home = ({navigation}) => {
   newsCollection = new Map();
+  const [value, onChangeText] = React.useState('');
+  
+  function filterList(list){
+    if(value) {
+    return list.filter(listItem => (listItem.title).toLowerCase().includes(value.toLowerCase()) || (listItem.source).toLowerCase().includes(value.toLowerCase()) )
+    }
+    return [];
+  }
+
   return (
     <ScrollView style={{backgroundColor: theme.backgroundColor}}>
-      <TouchableNativeFeedback onPress={() => navigation.navigate('profile')}>
-        <Icon
-          name="user"
-          size={30}
-          color={theme.primaryColor}
-          style={{position: 'absolute', top: 30, right: 30, zIndex: 1}}
-        />
-      </TouchableNativeFeedback>
+    
+      <SearchBar
+        containerStyle={{backgroundColor:theme.primaryColor}}
+        inputContainerStyle={{backgroundColor:"white"}}
+        placeholder="Type Here..."
+        onChangeText={text => onChangeText(text)}
+        value={value}
+      />
+<Video
+  source={{ uri: 'http://d23dyxeqlo5psv.cloudfront.net/big_buck_bunny.mp4' }}
+  rate={1.0}
+  volume={1.0}
+  isMuted={false}
+  resizeMode="cover"
+  shouldPlay
+  isLooping
+  controls={true}
+  style={{ width: 300, height: 300 }}
+/>
+      <View style={{backgroundColor:"white"}}>
+      {filterList(newsList2).map(
+        (listItem, index) => (
+            <Text key={index} style={styles.searchItem}>{listItem.title}</Text>
+
+          ))}
+          
+      </View>     
       <NewsRowSection
         sectionTitle="Happening in Australia"
         newsArray={australiaNews}
@@ -242,4 +274,21 @@ const styles = StyleSheet.create({
     color: 'white',
     fontSize: 18,
   },
+  searchItem: {
+    color:"black",
+    marginBottom:10,
+  },
+  videoContainer: {
+    flex: 1,
+    backgroundColor: 'black',
+},
+video: {
+    position: 'absolute',
+    top: 0,
+    bottom: 0,
+    left: 0,
+    right: 0,
+},
+
+
 });
