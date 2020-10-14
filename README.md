@@ -49,10 +49,11 @@ We also created a website for our Veriti Project which contains overview and mem
 - [Feedback & Reflection](https://drive.google.com/drive/folders/1RJ87i5w2UAPCj1A7MinpT9vZ895SF5zU?usp=sharing)
 - [Showcase Video](https://drive.google.com/drive/folders/1lJdRYwLsQmvdvXhB1Rl1poJJ0w_n9bQ5)
 
-## Rroject Management and Communication
+## Project Management, Communication and Artifacts
+- [Our Backend Repository](https://gitlab.cecs.anu.edu.au/u5825803/veriti-backend)
+- User our [Jira Invite Link](https://id.atlassian.com/invite/p/jira-software?id=hs9nXMJKShK5KvTSNpuwyg) to get access to our [Jira Board](https://veriti.atlassian.net/secure/RapidBoard.jspa?rapidView=2&projectKey=VA)
 - [Miro Story Board](https://miro.com/app/board/o9J_kmvWyI8=/)
 - [Google Drive for documentation Storage](https://drive.google.com/drive/folders/1eSVANGZcTTQHmhdbAeDPfytn9qH2z0SW?usp=sharing)
 - [Microsoft Planner for task log](https://tasks.office.com/ANU365.onmicrosoft.com/en-US/Home/Planner/#/plantaskboard?groupId=b281e11d-1009-476d-8907-ebd2be2edb48&planId=kZ83flB2k06jqDMWq27Jn8gAFks5)
 - [Communication Document](https://docs.google.com/document/d/1Y_dyhCAuoTM0jxEbyiXzjQaNaDeoiTfVqYjiQvUADnQ/edit?usp=sharing)
-- User our [Jira Invite Link](https://id.atlassian.com/invite/p/jira-software?id=hs9nXMJKShK5KvTSNpuwyg) to get access to our [Jira Board](https://veriti.atlassian.net/secure/RapidBoard.jspa?rapidView=2&projectKey=VA)
 
