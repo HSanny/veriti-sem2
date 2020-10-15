@@ -27,9 +27,9 @@ import {
 
 import Login from './components/Login';
 import { Home, HappeningScreen, Stack } from "./components/Home";
-import ForYou from './components/ForYou';
 import SignUp from "./components/SignUp";
 import NewsArticle from './components/NewsArticle';
+import CategoryExpanded from './components/CategoryExpanded';
 import SavedArticles, { SavedArticlesStack } from './components/SavedArticles';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { NavigationContainer } from '@react-navigation/native';
@@ -125,6 +125,7 @@ function App (){
             <AppStackNavigator.Screen name = "SignUp" component ={SignUp} options={{headerShown:false}}/>
             <AppStackNavigator.Screen name = "Home" component ={HomePage} options={{headerShown:false}}/>
             <AppStackNavigator.Screen name = "profile" component = {profile} options={{headerShown: false}} />
+            <AppStackNavigator.Screen name = "CategoryExpanded" component = {CategoryExpanded} options={{headerShown: false}} />
             <AppStackNavigator.Screen name = "NewsArticle" component = {NewsArticle} options={{headerShown: false}} />
             <AppStackNavigator.Screen name = "SavedArticles" component = {SavedArticles} options={{headerShown: false}} />
           </AppStackNavigator.Navigator>
@@ -138,7 +139,7 @@ const HomePage = ({route, navigation}) =>{
         <Tab.Navigator
           initialRouteName="Feed"
           tabBarOptions={{
-            activeTintColor: theme.secondaryColour,
+            activeTintColor: theme.primaryColor,
           }}>
           <Tab.Screen
             name="HomeStack"

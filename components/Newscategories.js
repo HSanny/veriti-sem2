@@ -10,7 +10,7 @@ import { useNavigation } from '@react-navigation/native';
 import { theme } from '../resources/colour-scheme/theme';
 
 const Newscategories = (props) => {
-  let newsbox = 200;
+  let newsbox = 150;
   
   // For some reasons doesn't work using this.props.navigation
   const navigation = useNavigation();
@@ -29,17 +29,18 @@ const Newscategories = (props) => {
       <View
         style={{
           flex: 1,
-          height: newsbox,
+          height: newsbox+50,
           width: newsbox,
+          borderWidth:2,
           borderColor: theme.primaryColor,
           borderRadius: 10,
           alignItems: 'center',
           justifyContent: 'center',
-          marginRight: 5,
-          backgroundColor: theme.primaryColor,
+          marginRight: 10,
+          backgroundColor: theme.backgroundColor,
         }}
       >
-        <View style={{flex: 2}}>
+        <View style={{flex: 3}}>
           <Image
             style={{
               height: newsbox - 10,
@@ -51,8 +52,8 @@ const Newscategories = (props) => {
             source={props.imagesource}
           />
         </View>
-        <View style={{flex: 1}}>
-          <Text numberOfLines={3} style={{flex: 1, paddingHorizontal: 10, color: 'white'}}>
+        <View style={{marginTop: -10,flex: 2, backgroundColor: theme.primaryColor, borderTopRightRadius:10}}>
+          <Text numberOfLines={4} style={{flex: 1, paddingTop:5, paddingHorizontal: 10, color: "white"}}>
             {props.newsdescription}
           </Text>
         </View>

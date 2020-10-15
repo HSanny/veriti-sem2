@@ -13,7 +13,7 @@ export const styles = StyleSheet.create({
   input: {
     height: 40, 
     backgroundColor: 'white',
-    borderColor: 'white', 
+    borderColor: theme.primaryColor, 
     borderWidth: 2,
     borderRadius: 10,
     textAlign:"center",

@@ -64,8 +64,12 @@ export default class SavedArticles extends Component {
     const { navigation } = this.props;
     const windowWidth = Dimensions.get('window').width;
     return (
+        
       <ScrollView style={{backgroundColor: theme.backgroundColor}}>
         <View style={styles.container}>
+        <Text style = {{padding:15,textAlign:'left',alignSelf:'stretch', fontSize:30, color:theme.primaryColor, fontWeight:"bold"}}>
+          Your Saved Articles
+        </Text>
           {this.state.userSavedNews.map((news, index) => {
             return (
               <TouchableOpacity 
@@ -78,6 +82,7 @@ export default class SavedArticles extends Component {
                   borderWidth: 2,
                   borderRadius: 10,
                   marginTop: 10,
+                  marginBottom:10,
                   padding: 10
                 }}
                 onPress={() => navigation.navigate('NewsArticle', {
@@ -93,12 +98,12 @@ export default class SavedArticles extends Component {
                 <Image
                   style={{
                     flex: 0,
-                    height: 100
+                    height: 150
                   }}
                   source={{uri: news.imageSrc}}
                 />
                 <Text 
-                  numberOfLines={3} 
+                  numberOfLines={2} 
                   style={{
                     flex: 1, 
                     color: theme.primaryColor,

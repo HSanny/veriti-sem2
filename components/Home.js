@@ -4,20 +4,16 @@ import React from 'react';
 import {
   Text,
   View,
+  Button,
   TouchableOpacity,
   TouchableNativeFeedback,
   StyleSheet,
   SafeAreaView,
   ScrollView,
 } from 'react-native';
-import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import {createStackNavigator} from '@react-navigation/stack';
-import Icon from 'react-native-vector-icons/AntDesign';
-
+import { useNavigation } from '@react-navigation/native';
 import Newscategories from './Newscategories';
-import ForYou from './ForYou';
-import InAus from './InAus';
-import HappenGlobal from './HappenGlobal';
 import {australiaNews} from '../resources/dummy-news/australia';
 import {worldNews} from '../resources/dummy-news/world';
 import {forYouNews} from '../resources/dummy-news/foryou';
@@ -26,73 +22,22 @@ import { theme } from '../resources/colour-scheme/theme';
 export let newsCollection;
 export const Stack = createStackNavigator();
 
-function HappeningStack() {
-  return (
-    <Stack.Navigator
-      initialRouteName="Happening"
-      screenOptions={{
-        headerStyle: {backgroundColor: theme.primaryColor},
-        headerTintColor: theme.textLight,
-        headerTitleStyle: {fontWeight: 'bold'},
-      }}>
-      <Stack.Screen
-        name="Happening News"
-        component={HappeningScreen}
-        options={{title: 'Happening News'}}
-      />
-    </Stack.Navigator>
-  );
-}
-
-export default function HomePage() {
-  return (
-    <Tab.Navigator
-      initialRouteName="Feed"
-      tabBarOptions={{
-        activeTintColor: theme.primaryColor,
-      }}>
-      <Tab.Screen
-        name="HomeStack"
-        component={HomeStack}
-        options={{
-          tabBarLabel: 'Home',
-          tabBarIcon: ({color, size}) => (
-            <MaterialCommunityIcons name="home" color={color} size={size} />
-          ),
-        }}
-      />
-      <Tab.Screen
-        name="HappeningStack"
-        component={HappeningStack}
-        options={{
-          tabBarLabel: 'Happening',
-          tabBarIcon: ({color, size}) => (
-            <MaterialCommunityIcons name="home" color={color} size={size} />
-          ),
-        }}
-      />
-      <Tab.Screen
-        name="ForYou"
-        component={ForYou}
-        options={{
-          tabBarLabel: 'ForYou',
-          tabBarIcon: ({color, size}) => (
-            <MaterialCommunityIcons name="home" color={color} size={size} />
-          ),
-        }}
-      />
-    </Tab.Navigator>
-  );
-}
 
 export const NewsRowSection = (props) => {
-  const newsbox = 200;
+  const newsbox = 150;
+  const navigation = useNavigation();
+
   return (
     <View>
-      <Text style={{fontWeight: 'bold', fontSize: 22, padding: 30}}>
+      <View  style={{flexDirection:"row", justifyContent: "space-between"}}>
+      <Text style={{fontWeight: 'bold', fontSize: 22, padding: 20}}>
         {props.sectionTitle}
       </Text>
-      <View style={{height: newsbox, flex: 1}}>
+      <View style = {{padding:20, width:150}}>
+        <Button color = {theme.primaryColor}  title="View More" onPress={() => navigation.navigate('CategoryExpanded')}/>
+      </View>
+      </View>
+      <View style={{height: newsbox+50, flex: 1}}>
         <ScrollView
           horizontal={true}
           contentContainerStyle={{paddingLeft: 20, flexGrow: 1}}
@@ -126,14 +71,6 @@ export const Home = ({navigation}) => {
   newsCollection = new Map();
   return (
     <ScrollView style={{backgroundColor: theme.backgroundColor}}>
-      <TouchableNativeFeedback onPress={() => navigation.navigate('profile')}>
-        <Icon
-          name="user"
-          size={30}
-          color={theme.primaryColor}
-          style={{position: 'absolute', top: 30, right: 30, zIndex: 1}}
-        />
-      </TouchableNativeFeedback>
       <NewsRowSection
         sectionTitle="Happening in Australia"
         newsArray={australiaNews}
@@ -150,57 +87,6 @@ export const Home = ({navigation}) => {
   );
 };
 
-export const HappeningScreen = ({navigation}) => {
-  return (
-    <SafeAreaView style={{flex: 1}}>
-      <View style={{flex: 1, padding: 16}}>
-        <View
-          style={{
-            flex: 1,
-            alignItems: 'center',
-            justifyContent: 'center',
-          }}>
-          <Text
-            style={{
-              fontSize: 25,
-              textAlign: 'center',
-              marginBottom: 16,
-            }}>
-            You are on Happening Screen
-          </Text>
-          <TouchableOpacity
-            style={styles.button}
-            onPress={() =>
-              navigation.navigate('HappeningStack', {screen: 'HappeningInAus'})
-            }>
-            <Text>Go to Happening in Aus</Text>
-          </TouchableOpacity>
-          <TouchableOpacity
-            style={styles.button}
-            onPress={() => navigation.navigate('HappeningGlobally')}>
-            <Text>Go to Happen Globally</Text>
-          </TouchableOpacity>
-        </View>
-        <Text
-          style={{
-            fontSize: 18,
-            textAlign: 'center',
-            color: 'grey',
-          }}>
-          React Native Bottom Navigation
-        </Text>
-        <Text
-          style={{
-            fontSize: 16,
-            textAlign: 'center',
-            color: 'grey',
-          }}>
-          www.aboutreact.com
-        </Text>
-      </View>
-    </SafeAreaView>
-  );
-};
 
 const styles = StyleSheet.create({
   button: {
