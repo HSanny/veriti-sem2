@@ -30,13 +30,12 @@ import { color } from 'react-native-reanimated';
         return (
           
           <View>
-            <TouchableOpacity onPress={() => navigation.navigate('Home')}>
-            <Icon name="close" size={50} color={theme.primaryColor} />
-          </TouchableOpacity>
+           
           <Text style = {{padding:20,textAlign:'left',alignSelf:'stretch', fontSize:30, color:theme.primaryColor, fontWeight:"bold"}}>
             Happening in Australia
           </Text>
             <FlatList 
+            
             contentContainerStyle={{padding:20,flexGrow: 1, paddingTop:0}}
             data={worldNews}
             renderItem={({item}) => (
