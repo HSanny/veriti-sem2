@@ -11,13 +11,14 @@ import {
   SafeAreaView,
   ScrollView,
   FlatList,
-  Dimensions
+  Dimensions,
+  Image
 
 } from 'react-native';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import {createStackNavigator} from '@react-navigation/stack';
 import Icon from 'react-native-vector-icons/AntDesign';
-import { SearchBar } from 'react-native-elements';
+import { ListItem, SearchBar } from 'react-native-elements';
 
 import Newscategories from './Newscategories';
 import ForYou from './ForYou';
@@ -30,7 +31,6 @@ import { theme } from '../resources/colour-scheme/theme';
 
 export let newsCollection;
 export const Stack = createStackNavigator();
-var newsList = (australiaNews.map(function(obj) { return obj.title})).concat(worldNews.map(function(obj) { return obj.title; })).concat(forYouNews.map(function(obj) { return obj.title; }));
 var newsList2 = australiaNews.concat(worldNews).concat(forYouNews);
 
 function HappeningStack() {
@@ -158,8 +158,22 @@ export const Home = ({navigation}) => {
       <View style={{backgroundColor:"white"}}>
       {filterList(newsList2).map(
         (listItem, index) => (
-            <Text key={index} style={styles.searchItem}>{listItem.title}</Text>
-
+          <TouchableOpacity key={index}  style={{flexDirection:"row",textAlign:"center",margin:10,borderWidth:2,borderColor:theme.primaryColor,borderRadius:10}}
+          onPress={() => {
+              navigation.navigate('NewsArticle',{
+              id: listItem.id,
+              img: {
+                uri: listItem.imageSrc
+              },
+              title: listItem.title,
+              source: listItem.source,
+              body: listItem.body
+            })
+            onChangeText("")
+          }}>
+            <Image source={{uri: listItem.imageSrc}} style={{height:100,width:100,marginRight:10}}></Image>
+            <Text style={styles.searchItem}>{listItem.title}</Text>
+          </TouchableOpacity>
           ))}
           
       </View>     
@@ -272,6 +286,7 @@ const styles = StyleSheet.create({
     fontSize: 18,
   },
   searchItem: {
+    flex:1,
     color:"black",
     marginBottom:10,
   },

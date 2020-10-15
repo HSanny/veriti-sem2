@@ -114,7 +114,7 @@ export default class NewsArticle extends Component {
           </TouchableOpacity>
           <View>
           <Video
-          source={{ uri: 'http://d23dyxeqlo5psv.cloudfront.net/big_buck_bunny.mp4' }}
+          source={{uri: 'http://d23dyxeqlo5psv.cloudfront.net/big_buck_bunny.mp4'}}
           resizeMode="contain"
           paused={this.state.paused}
           onLoad={this.handleLoad}
