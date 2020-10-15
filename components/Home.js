@@ -10,7 +10,9 @@ import {
   StyleSheet,
   SafeAreaView,
   ScrollView,
-  FlatList
+  FlatList,
+  Dimensions
+
 } from 'react-native';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import {createStackNavigator} from '@react-navigation/stack';
@@ -30,6 +32,7 @@ export let newsCollection;
 export const Stack = createStackNavigator();
 var newsList = (australiaNews.map(function(obj) { return obj.title})).concat(worldNews.map(function(obj) { return obj.title; })).concat(forYouNews.map(function(obj) { return obj.title; }));
 var newsList2 = australiaNews.concat(worldNews).concat(forYouNews);
+
 function HappeningStack() {
   return (
     <Stack.Navigator
@@ -129,35 +132,29 @@ NewsRowSection.propTypes = {
 export const Home = ({navigation}) => {
   newsCollection = new Map();
   const [value, onChangeText] = React.useState('');
-  
+  const [search,displaySearch] = React.useState(false);
   function filterList(list){
     if(value) {
     return list.filter(listItem => (listItem.title).toLowerCase().includes(value.toLowerCase()) || (listItem.source).toLowerCase().includes(value.toLowerCase()) )
     }
     return [];
   }
+  const windowWidth = Dimensions.get('window').width
 
   return (
     <ScrollView style={{backgroundColor: theme.backgroundColor}}>
-    
+    {search == true && (
       <SearchBar
         containerStyle={{backgroundColor:theme.primaryColor}}
         inputContainerStyle={{backgroundColor:"white"}}
         placeholder="Type Here..."
         onChangeText={text => onChangeText(text)}
         value={value}
-      />
-<Video
-  source={{ uri: 'http://d23dyxeqlo5psv.cloudfront.net/big_buck_bunny.mp4' }}
-  rate={1.0}
-  volume={1.0}
-  isMuted={false}
-  resizeMode="cover"
-  shouldPlay
-  isLooping
-  controls={true}
-  style={{ width: 300, height: 300 }}
-/>
+      />)}
+
+      <TouchableOpacity onPress= {() => {displaySearch(!search)}}>
+        <Text>change</Text>
+      </TouchableOpacity>
       <View style={{backgroundColor:"white"}}>
       {filterList(newsList2).map(
         (listItem, index) => (

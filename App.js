@@ -39,7 +39,6 @@ import { styles } from './components/styles';
 import { theme } from './resources/colour-scheme/theme';
 
 const Tab = createBottomTabNavigator();
-
 function HomeStack() {
   return (
       <Stack.Navigator
@@ -52,8 +51,14 @@ function HomeStack() {
         <Stack.Screen
           name="Home"
           component={Home}
-          options={{ title: 'Home Page' }}/>
+          options={{ headertitle: props => <LogoTitle {...props}/>}}/>
       </Stack.Navigator>
+  );
+}
+function LogoTitle() {
+  return (
+    <Text>Harish</Text>
+      
   );
 }
 

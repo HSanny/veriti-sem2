@@ -6,12 +6,17 @@ import {
   StyleSheet,
   Image,
   TouchableOpacity,
+  TouchableWithoutFeedback,
   ScrollView,
 } from 'react-native';
+import ProgressBar from "react-native-progress/Bar"
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import {theme} from '../resources/colour-scheme/theme';
 import {styles} from './styles';
 import {userCollection} from './Login';
+import Video from 'react-native-video';
+import VideoPlayer from 'react-native-video-controls';
+import { ThemeConsumer } from 'react-native-elements';
 
 export default class NewsArticle extends Component {
   constructor(props) {
@@ -22,9 +27,13 @@ export default class NewsArticle extends Component {
       isSaved: userCollection
         .getUser('user001')
         .savedNews.has(this.props.route.params.id),
+        paused: false, 
+        progress:0,
+        duration: 0,
+        fullscreen: false
     };
   }
-
+  
   toggleIsSaved() {
     const newsId = this.props.route.params.id;
     if (this.state.isSaved) {
@@ -37,13 +46,58 @@ export default class NewsArticle extends Component {
       return state;
     });
   }
+  handleLoad = (meta) => {
+    this.setState({
+      duration: meta.duration
+    })
+  }
+  handleMainButtonTouch = () => {
+    console.log(this.state.progress)
+    if (this.state.progress >= 0.99) {
+      console.log("got here")
+      this.player.seek(0)
+    }
+    this.setState(state => {
+      return {
+        paused: !state.paused
+      }
+    })
+  }
+  handleProgressPress = (e) => {
+    
+    const position = e.nativeEvent.locationX;
+    const progress = (position/ 250) * this.state.duration;
+    this.player.seek(progress);
+    this.setState({paused: false})
+  }
+  handleProgress= (progress) => {
+    this.setState({progress:progress.currentTime / this.state.duration})
+  }
+  handleEnd = () => {
+    this.setState({paused: true})
+  }
+  handleFullscreen = state => {
+    return {
+      fullscreen: !state.fullscreen
+    }
+  }
+
 
   render() {
     const windowWidth = Dimensions.get('window').width;
     const {navigation} = this.props;
     const newsParams = this.props.route.params;
     const paragraphs =
-      newsParams.body !== undefined && newsParams.body.split('\n');
+    newsParams.body !== undefined && newsParams.body.split('\n');
+    secondsToMinutes = (seconds) => {
+      if (seconds > 60) {
+        return seconds/60 + " : " + seconds % 60
+      }
+      if (seconds < 10) {
+        return "00 : 0" + seconds
+      }
+     return "00 : " + seconds 
+    }
 
     return (
       <ScrollView>
@@ -59,25 +113,40 @@ export default class NewsArticle extends Component {
             <Icon name="close" size={50} color={theme.primaryColor} />
           </TouchableOpacity>
           <View>
-            <Image
-              style={{
-                height: 200,
-                width: windowWidth,
-                flex: 0,
-                marginTop: 5,
-              }}
-              source={newsParams.img}
-            />
-            <Icon
-              name="volume-mute"
-              size={25}
-              color="black"
-              style={{
-                position: 'absolute',
-                bottom: 10,
-                right: 10,
-              }}
-            />
+          <Video
+          source={{ uri: 'http://d23dyxeqlo5psv.cloudfront.net/big_buck_bunny.mp4' }}
+          resizeMode="contain"
+          paused={this.state.paused}
+          onLoad={this.handleLoad}
+          onProgress={this.handleProgress}
+          onEnd={this.handleEnd}
+          ref={ref => this.player = ref}
+          style={{ width: windowWidth, height: 200 }}
+          fullscreen={this.state.fullscreen}
+          />
+          <View style={styles.controls}>
+            <TouchableWithoutFeedback onPress= {this.handleMainButtonTouch}>
+              <Icon name={!this.state.paused ? "pause" : "play"} size={30} color={theme.primaryColor}/>
+            </TouchableWithoutFeedback>
+            <TouchableWithoutFeedback onPress={this.handleProgressPress}>
+              <View>
+                <ProgressBar
+                  progress={this.state.progress}
+                  color={theme.primaryColor}
+                  unfilled="rgba(255,255,255,.5)"
+                  width={250}
+                  height={10}
+                  />  
+              </View>
+            </TouchableWithoutFeedback>
+            <Text style={styles.duration}>
+                {secondsToMinutes(Math.floor(this.state.progress * this.state.duration))}
+
+            </Text>
+            <TouchableOpacity onPress= {this.handleFullscreen}>
+              <Icon name="fullscreen" size={30} color={theme.primaryColor} />
+            </TouchableOpacity>
+          </View>
           </View>
           <View
             style={{
