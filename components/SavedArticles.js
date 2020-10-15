@@ -14,6 +14,10 @@ import { theme } from '../resources/colour-scheme/theme';
 import { userCollection } from './Login';
 import { styles } from './styles';
 import { NewsRowSection, newsCollection } from './Home';
+import Icon from 'react-native-vector-icons/AntDesign';
+import  {Headerlogo} from "../App";
+
+
 
 const Stack = createStackNavigator();
 
@@ -29,7 +33,14 @@ export function SavedArticlesStack() {
       <Stack.Screen
         name="SavedArticles"
         component={SavedArticles}
-        options={{ title: 'Saved Articles' }}/>
+        options= {{ 
+          headerTitle: () => <Headerlogo />,
+          headerRight: () => (
+            <TouchableOpacity style={ [{paddingHorizontal:15}]} onPress={() => navigation.navigate('Home')}>
+          <Icon styles={{marginLeft:10}}   name="search1" size={30} color={theme.backgroundColor} />
+        </TouchableOpacity>
+          ), 
+          }}/>
     </Stack.Navigator>
   )
 }
