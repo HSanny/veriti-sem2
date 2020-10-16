@@ -27,9 +27,9 @@ import {
 
 import Login from './components/Login';
 import { Home, HappeningScreen, Stack } from "./components/Home";
-import ForYou from './components/ForYou';
 import SignUp from "./components/SignUp";
 import NewsArticle from './components/NewsArticle';
+import CategoryExpanded from './components/CategoryExpanded';
 import SavedArticles, { SavedArticlesStack } from './components/SavedArticles';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { NavigationContainer } from '@react-navigation/native';
@@ -51,7 +51,16 @@ function HomeStack() {
         <Stack.Screen
           name="Home"
           component={Home}
-          options={{ headertitle: props => <LogoTitle {...props}/>}}/>
+          options= {{ 
+            headerTitle: () => <Headerlogo />,
+            headerRight: () => (
+              <View styles={{marginRight:10}}>
+              <TouchableOpacity style={ [{paddingHorizontal:15}]} onPress={() => navigation.navigate('Home')}>
+            <Icon styles={{marginLeft:10}}   name="search1" size={30} color={theme.backgroundColor} />
+          </TouchableOpacity>
+          </View>
+            ), 
+            }}/>
       </Stack.Navigator>
   );
 }
@@ -84,22 +93,14 @@ export const profile = ({navigation}) => {
   )
 }
 
-function HappeningStack(){
-    return(
-        <Stack.Navigator
-            initialRouteName="Happening"
-            screenOptions={{
-                headerStyle: { backgroundColor: theme.primaryColor },
-                headerTintColor: theme.textLight,
-                headerTitleStyle: { fontWeight: 'bold' }
-      }}>
-        <Stack.Screen
-            name="Happening News"
-            component={HappeningScreen}
-            options={{ title: 'Happening News' }}/>
-        
-    </Stack.Navigator>
-    );
+
+export function Headerlogo() {
+  return (
+    <Image
+      style={{marginLeft:100, aspectRatio:0.2, resizeMode: "contain"}}
+      source={require('./resources/logo_white.png')}
+    />
+  );
 }
 
 function ProfileStack(){
@@ -107,14 +108,23 @@ function ProfileStack(){
         <Stack.Navigator
             initialRouteName="Profile"
             screenOptions={{
-                headerStyle: { backgroundColor: theme.primaryColor },
+                headerStyle: { backgroundColor: theme.primaryColor},
                 headerTintColor: theme.textLight,
                 headerTitleStyle: { fontWeight: 'bold' }
       }}>
         <Stack.Screen
             name="User Profile"
             component={profile}
-            options={{ title: 'User Profile' }}/>
+            options={{ 
+            headerTitle: () => <Headerlogo />,
+            headerRight: () => (
+              <View styles={{marginRight:10}}>
+              <TouchableOpacity style={ [{paddingHorizontal:15}]} onPress={() => navigation.navigate('Home')}>
+            <Icon styles={{marginLeft:10}}   name="search1" size={30} color={theme.backgroundColor} />
+          </TouchableOpacity>
+          </View>
+            ), 
+            }}/>
         
     </Stack.Navigator>
     );
@@ -130,6 +140,7 @@ function App (){
             <AppStackNavigator.Screen name = "SignUp" component ={SignUp} options={{headerShown:false}}/>
             <AppStackNavigator.Screen name = "Home" component ={HomePage} options={{headerShown:false}}/>
             <AppStackNavigator.Screen name = "profile" component = {profile} options={{headerShown: false}} />
+            <AppStackNavigator.Screen name = "CategoryExpanded" component = {CategoryExpanded} options={{headerShown: false}} />
             <AppStackNavigator.Screen name = "NewsArticle" component = {NewsArticle} options={{headerShown: false}} />
             <AppStackNavigator.Screen name = "SavedArticles" component = {SavedArticles} options={{headerShown: false}} />
           </AppStackNavigator.Navigator>
@@ -143,7 +154,7 @@ const HomePage = ({route, navigation}) =>{
         <Tab.Navigator
           initialRouteName="Feed"
           tabBarOptions={{
-            activeTintColor: theme.secondaryColour,
+            activeTintColor: theme.primaryColor,
           }}>
           <Tab.Screen
             name="HomeStack"
