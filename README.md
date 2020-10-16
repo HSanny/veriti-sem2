@@ -51,6 +51,7 @@ We also created a website for our Veriti Project which contains overview and mem
 
 ## Project Management, Communication and Artifacts
 - [Our Backend Repository](https://gitlab.cecs.anu.edu.au/u5825803/veriti-backend)
+- [Our ML R&D Repository](https://gitlab.cecs.anu.edu.au/u6044681/veriti-ml)
 - User our [Jira Invite Link](https://id.atlassian.com/invite/p/jira-software?id=hs9nXMJKShK5KvTSNpuwyg) to get access to our [Jira Board](https://veriti.atlassian.net/secure/RapidBoard.jspa?rapidView=2&projectKey=VA)
 - [Miro Story Board](https://miro.com/app/board/o9J_kmvWyI8=/)
 - [Google Drive for documentation Storage](https://drive.google.com/drive/folders/1eSVANGZcTTQHmhdbAeDPfytn9qH2z0SW?usp=sharing)
