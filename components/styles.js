@@ -78,5 +78,30 @@ export const styles = StyleSheet.create({
     fontSize:18,
     flexDirection:"row",
     marginTop:10
-  } 
+  },
+  controls: {
+    backgroundColor:"white",
+    height: 48,
+    left: 0,
+    bottom: 0,
+    right: 0,
+    position: "absolute",
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "space-around",
+    paddingHorizontal: 10,
+    opacity:0.75,
+  },
+  mainButton: {
+    marginRight: 15,
+  },
+  duration: {
+    color: theme.primaryColor,
+    marginLeft: 15,
+  },
+  videoContainer: {
+    flex: 1,
+    paddingTop: 250
+  }
+  
 });
